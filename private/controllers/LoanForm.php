@@ -1,6 +1,6 @@
 <?php
 
-class RequestForm extends Controller {
+class LoanForm extends Controller {
 
 
     public function index () {
@@ -25,7 +25,7 @@ class RequestForm extends Controller {
             $customer_id = $row2->cust_id;
         }
 
-        if (isset($_POST['date']) && isset($_POST['time'])){
+        if (isset($_POST['amount'])){
 
             $data['prov_id'] = $row1->prov_id;
             $data['cust_id'] = $customer_id;
@@ -38,6 +38,6 @@ class RequestForm extends Controller {
             $this->redirect('dashboard');
         }
 
-        $this->view('service/form', ['rows' => $row, 'rows1' => $row1]);
+        $this->view('loan/form', ['rows' => $row, 'rows1' => $row1]);
     }
 }

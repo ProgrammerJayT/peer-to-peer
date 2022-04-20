@@ -52,7 +52,7 @@
 
 <section class="register-photo" style="padding-top: 20px;background: rgb(255,255,255);">
     <div class="form-container">
-        <div class="image-holder" style="background: url('<?=ROOT?>/assets/img/pexels-anete-lusina-4792496.jpg') center / contain no-repeat;width: 400px;text-align: center;"></div>
+        <div class="image-holder" style="background: url('assets/img/sign_up.png') center / contain no-repeat;width: 400px;text-align: center;"></div>
         <form method="post">
 
             <?php if(count($errors) > 0) : ?>
@@ -69,16 +69,18 @@
             <h2 class="text-center"><strong>Create</strong> an account.</h2>
             <div class="mb-3"><input class="form-control" value="<?=get_var('name')?>" type="text" name="name" placeholder="First name" required=""></div>
             <div class="mb-3"><input class="form-control" value="<?=get_var('surname')?>" type="text" name="surname" placeholder="Surname" required=""></div>
+            <div class="mb-3"><input class="form-control" value="<?=get_var('id')?>" type="text" name="id" placeholder="Identity number" required="" minlength="13" maxlength="13"></div>
             <div class="mb-3"><input class="form-control" value="<?=get_var('phone')?>" type="tel" name="phone" placeholder="Phone (071.....68)" required="" minlength="10" maxlength="10"></div>
             <div class="mb-3"><input class="form-control" value="<?=get_var('address')?>" type="text" name="address" placeholder="Residential address" required=""></div>
             <h5 class="text-center" style="font-weight: bold;margin-top: 50px;margin-bottom: 5px;">Credentials</h5>
             <hr style="margin-top: 5px;">
+            <div class="mb-3"><input class="form-control" value="<?=get_var('username')?>" type="text" name="username" placeholder="Username - (8 to 10 characters allowed)" required="" minlength="8" maxlength="10"></div>
             <div class="mb-3"><input class="form-control" value="<?=get_var('email')?>" type="email" name="email" placeholder="Email" required=""></div>
-            <div class="mb-3"><input class="form-control" value="<?=get_var('password')?>" type="password" name="password" placeholder="Password" required="" minlength="6"></div>
+            <div class="mb-3"><input class="form-control" value="<?=get_var('password')?>" type="password" name="password" placeholder="Password" required="" minlength="8"></div>
             <div class="mb-3"><select class="form-control" name="user" style="color: var(--bs-gray-800);font-family: helvetica;">
                     <option <?=get_select('user', '')?> value="">Select user type</option>
                     <option <?=get_select('user', 'customer')?> value="customer">Customer</option>
-                    <option <?=get_select('user', 'provider')?> value="provider">Service Provider</option>
+                    <option <?=get_select('user', 'investor')?> value="investor">Investor</option>
                 </select></div>
             <div class="mb-3">
                 <button class="btn btn-primary d-block pulse animated w-100"

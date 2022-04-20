@@ -38,17 +38,35 @@
 </head>
 
 <body style="background: rgb(255,255,255);">
-    <div class="contenedorPrimario">
-        <h1 class="padMar headerOmolds text-center"> <img src="assets/img/logo_system.jpg" style="width: 500px;"></h1>
+    <div class="d-xl-flex flex-row justify-content-xl-center align-items-xl-center" style="height: 200px;background: #000000;margin-right: 200px;margin-left: 200px;border-radius: 25px;width: 800px;border-top-left-radius: 100px;border-bottom-left-radius: 100px;">
+        <div style="width: 400px;"><img src="assets/img/sidebar-1.jpg" style="width: 200px;border-radius: 100px;height: 200px;"></div>
+        <div style="width: 400px;border-top-left-radius: 0px;">
+            <p style="color: rgb(255,255,255);margin-bottom: 0px;font-size: 25px;font-weight: bold;">Name Surname</p>
+            <p style="color: rgb(255,255,255);margin-bottom: 0px;">Username</p>
+            <p style="color: rgb(255,255,255);margin-bottom: 0px;">Email</p>
+            <p style="color: rgb(255,255,255);margin-bottom: 0px;">Phone</p>
+            <p style="color: rgb(255,255,255);margin-bottom: 0px;">Email</p>
+            <a href="#" style="color: rgb(0,0,0);opacity: 0.76;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="color: rgb(255,255,255);font-size: 35px;margin-top: 10px;">
+                    <path d="M17 16L21 12M21 12L17 8M21 12L7 12M13 16V17C13 18.6569 11.6569 20 10 20H6C4.34315 20 3 18.6569 3 17V7C3 5.34315 4.34315 4 6 4H10C11.6569 4 13 5.34315 13 7V8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg></a>
+        </div>
     </div>
-    <section class="login-clean" style="padding-top: 0;background: rgb(254,254,254);">
-        <form method="post">
-            <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Email" required=""></div>
-            <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password" required="" minlength="8" maxlength="10"></div>
-            <div class="mb-3"><button class="btn d-block w-100" type="submit" style="background: #ff3546;color: rgb(255,255,255);">Log In</button></div><a class="forgot" href="#">Forgot your email or password?</a>
-            <hr>
-            <p style="text-align: center;margin-top: 20px;margin-bottom: 10px;">No account yet?</p><a class="forgot" href="#" style="font-weight: bold;color: rgb(0,0,0);">Register account</a>
-        </form>
+    <div class="d-xl-flex justify-content-xl-center" style="margin-top: 50px;margin-bottom: 50px;"><img src="assets/img/logo_system.jpg" style="width: 200px;"></div>
+    <section class="article-list">
+        <div class="container-fluid d-xl-flex justify-content-xl-center align-items-xl-center">
+            <div class="row articles" style="width: 600px;">
+                <div class="col-sm-6 col-md-4 item"><a href="#"><img class="img-fluid" src="assets/img/desk.jpg"></a>
+                    <h3 class="name">Apply for loan</h3><a class="action" href="#"><i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+                <div class="col-sm-6 col-md-4 item"><a href="#"><img class="img-fluid" src="assets/img/building.jpg"></a>
+                    <h3 class="name">My loans</h3><a class="action" href="#"><i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+                <div class="col-sm-6 col-md-4 item"><a href="#"><img class="img-fluid" src="assets/img/loft.jpg"></a>
+                    <h3 class="name">Profile</h3><a class="action" href="#"><i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
     </section>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/Animated-Type-Heading.js"></script>

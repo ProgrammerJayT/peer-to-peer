@@ -5,7 +5,17 @@ class User extends Model{
 
     public function validate($DATA){
 
+        $auth = new Auth();
+
         $this->errors = array();
+
+        if($auth->where("auth_username", $_POST['username'])){
+            $this->errors['username'] = "Username already exists";
+        }
+
+        if($auth->where("auth_email", $_POST['email'])){
+            $this->errors['email_exists'] = "Email already exists";
+        }
 
         if(!preg_match('/^[a-zA-Z]+$/', $DATA['name'])){
             $this->errors['name'] = "Non-alpha characters not allowed\n";

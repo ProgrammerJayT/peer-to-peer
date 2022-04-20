@@ -25,17 +25,29 @@
     </div>
     <section class="login-clean" style="padding-top: 0;background: rgb(254,254,254);">
         <form method="post">
+
+<?php if(count($errors) > 0) : ?>
+<div class="alert alert-warning alert-dismissible fade show p-1" role="alert">
+    <strong>Oops! </strong>
+    <?php foreach ($errors as $error):?>
+    <br> <?=$error?>
+    <?php endforeach;?>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<?php endif;?>
         <div class="mb-3"><select required="" name="user" class="form-select">
                 <option <?=get_select('user', '')?>  value="undefined" selected="">--Select User Type--</option>
                 <option <?=get_select('user', 'customer')?>  value="customer">Customer</option>
-                <option <?=get_select('user', 'investor')?>  value="provider">Investor</option>
+                <option <?=get_select('user', 'investor')?>  value="investor">Investor</option>
             </select>
         </div>
-            <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Email" required=""></div>
+            <div class="mb-3"><input class="form-control" type="text" name="username" placeholder="Username" required=""></div>
             <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password" required="" minlength="8" maxlength="10"></div>
             <div class="mb-3"><button class="btn d-block w-100" type="submit" style="background: #ff3546;color: rgb(255,255,255);">Log In</button></div><a class="forgot" href="#">Forgot your email or password?</a>
             <hr>
-            <p style="text-align: center;margin-top: 20px;margin-bottom: 10px;">No account yet?</p><a class="forgot" href="#" style="font-weight: bold;color: rgb(0,0,0);">Register account</a>
+            <p style="text-align: center;margin-top: 20px;margin-bottom: 10px;">No account yet?</p>
+            <a class="forgot" href='register' style="font-weight: bold;color: rgb(0,0,0);">Register account</a>
         </form>
     </section>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
