@@ -1,7 +1,7 @@
 <?php
 
-const ROOT = 'http://localhost/handy_services_mvc/public';
-const DBNAME = 'handy_services_db';
+const ROOT = 'http://localhost/peer-to-peer/public';
+const DBNAME = 'peer_to_peer';
 const DBHOST = 'localhost';
 const DBUSER = 'root';
 const DBPASS = '';
