@@ -21,7 +21,7 @@
 
 <body style="background: rgb(255,255,255);">
     <div class="contenedorPrimario">
-        <h1 class="padMar headerOmolds text-center"> <img src="assets/img/logo_system.jpg" style="width: 500px;"></h1>
+        <h1 class="padMar headerOmolds text-center"> <img src="assets/img/logo_system.jpg" style="width: 300px;"></h1>
     </div>
     <section class="login-clean" style="padding-top: 0;background: rgb(254,254,254);">
         <form method="post">
@@ -55,3 +55,4 @@
 </body>
 
 </html>
+<?php $this->view('footer') ?>

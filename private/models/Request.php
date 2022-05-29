@@ -3,6 +3,6 @@
 
 class Request extends Model{
 
-    public $table = "request";
+    public $table = "loan_request";
 
 }

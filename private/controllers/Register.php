@@ -10,30 +10,32 @@ class Register extends Controller
         if(count($_POST) > 0){
             $user = new User();
             $customer = new Customer();
-            $provider = new Provider();
+            $investor = new Investor;
             $auth = new Auth();
 
             if($user->validate($_POST)){
                 if($_POST['user'] == 'customer'){
+
                     $cust['cust_fname'] = $_POST['name'];
                     $cust['cust_lname'] = $_POST['surname'];
                     $cust['cust_address'] = $_POST['address'];
                     $cust['cust_email'] = $_POST['email'];
                     $cust['cust_phone'] = $_POST['phone'];
                     $cust['cust_username'] = $_POST['username'];
-                    $cust['cust_id'] = $_POST['id'];
-                    
-                    //To be set to get gender from ID number
-                    $cust['cust_gender'] = "not yet configured";
+
+                    $cust['cust_gender'] = "Unverified";
                     $customer->insert($cust);
                 }
                 else {
-                    $prov['prov_fname'] = $_POST['name'];
-                    $prov['prov_lname'] = $_POST['surname'];
-                    $prov['prov_phone'] = $_POST['phone'];
-                    $prov['prov_email'] = $_POST['email'];
-                    $prov['prov_address'] = $_POST['address'];
-                    $provider->insert($prov);
+                    $inv['inv_fname'] = $_POST['name'];
+                    $inv['inv_lname'] = $_POST['surname'];
+                    $inv['inv_phone'] = $_POST['phone'];
+                    $inv['inv_email'] = $_POST['email'];
+                    $inv['inv_address'] = $_POST['address'];
+                    $inv['inv_username'] = $_POST['username'];
+
+                    $inv['inv_gender'] = "Unverified";
+                    $investor->insert($inv);
                 }
 
                 $to_auth['auth_username'] = $_POST['username'];
@@ -42,11 +44,21 @@ class Register extends Controller
                 $to_auth['auth_type'] = $_POST['user'];
                 $auth->insert($to_auth);
 
-                $auth_obj = (object) $to_auth;
-                Authentication::authenticate($auth_obj);
-                $this->redirect('dashboard');
+                $toast = 'Welcome';
 
-            }else{
+                $auth_obj = (object) $to_auth;
+                Authentication::authenticate($auth_obj, $toast);
+
+                if ($_POST['user'] == 'customer'){
+                    $this->redirect('CustomerDashboard');
+                }
+
+                if ($_POST['user'] == 'investor'){
+                    $this->redirect('InvestorDashboard');
+                }
+
+            }
+            else{
                 $errors = $user->errors;
             }
         }

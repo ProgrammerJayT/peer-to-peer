@@ -27,7 +27,7 @@ class User extends Model{
             $this->errors['email'] = "Email is not valid";
         }
 
-        $user_type = ['provider', 'customer'];
+        $user_type = ['investor', 'customer'];
         if(empty($DATA['user']) || !in_array($DATA['user'], $user_type)){
             $this->errors['user'] = "Select user type!";
         }
