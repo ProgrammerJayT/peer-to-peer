@@ -86,7 +86,7 @@
                 <button class="btn btn-primary d-block pulse animated w-100"
                         type="submit" style="background: rgb(0,0,0);border-radius: 10px;">Sign Up</button>
             </div>
-            <a class="already" href="login">You already have an account? Login here.</a>
+            <a class="already" href="login">Already having an account? Login here.</a>
         </form>
     </div>
 </section>
