@@ -6,19 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Table - Brand</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Advent+Pro">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alfa+Slab+One">
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
     <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
     <link rel="stylesheet" href="assets/css/-Team-Rotating-Cards-BS4-.css">
     <link rel="stylesheet" href="assets/css/Animated-Header--Easy-Editable--1.css">
     <link rel="stylesheet" href="assets/css/Animated-Header--Easy-Editable-.css">
     <link rel="stylesheet" href="assets/css/Animation-Cards-1.css">
     <link rel="stylesheet" href="assets/css/Animation-Cards.css">
+    <link rel="stylesheet" href="assets/css/Form-Select---Full-Date---Month-Day-Year.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.2/css/bootstrap-slider.min.css">
     <link rel="stylesheet" href="assets/css/News-Cards.css">
 </head>
@@ -32,10 +33,10 @@
                 </a>
                 <hr class="sidebar-divider my-0">
                 <ul class="navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item"><a class="nav-link" href="InvestorDashboard"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
+                    <li class="nav-item"><a class="nav-link"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="InvestorProfile"><i class="fas fa-user"></i><span>Profile</span></a></li>
                     <li class="nav-item"><a class="nav-link" href=""><i class="fa fa-wpforms"></i><span>Sponsored loans</span></a></li>
-                    <li class="nav-item"><a class="nav-link active"><i class="fa fa-hand-pointer-o"></i><span>Sponsor a customer</span></a></li>
+                    <li class="nav-item"><a class="nav-link active" href="SponsorCustomer"><i class="fa fa-hand-pointer-o"></i><span>Sponsor a customer</span></a></li>
                     <li class="nav-item"><a class="nav-link" href=""><i class="fa fa-file-pdf-o"></i><span>Statements</span></a></li>
                 </ul>
                 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
@@ -65,8 +66,21 @@
                                             <div><span class="small text-gray-500">December 12, 2019</span>
                                                 <p>A new monthly report is ready to download!</p>
                                             </div>
-                                        </a>
-                                        <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                                        </a><a class="dropdown-item d-flex align-items-center" href="#">
+                                            <div class="me-3">
+                                                <div class="bg-success icon-circle"><i class="fas fa-donate text-white"></i></div>
+                                            </div>
+                                            <div><span class="small text-gray-500">December 7, 2019</span>
+                                                <p>$290.29 has been deposited into your account!</p>
+                                            </div>
+                                        </a><a class="dropdown-item d-flex align-items-center" href="#">
+                                            <div class="me-3">
+                                                <div class="bg-warning icon-circle"><i class="fas fa-exclamation-triangle text-white"></i></div>
+                                            </div>
+                                            <div><span class="small text-gray-500">December 2, 2019</span>
+                                                <p>Spending Alert: We've noticed unusually high spending for your account.</p>
+                                            </div>
+                                        </a><a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
                                     </div>
                                 </div>
                             </li>
@@ -81,8 +95,31 @@
                                                 <div class="text-truncate"><span>Hi there! I am wondering if you can help me with a problem I've been having.</span></div>
                                                 <p class="small text-gray-500 mb-0">Emily Fowler - 58m</p>
                                             </div>
-                                        </a>
-                                        <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                                        </a><a class="dropdown-item d-flex align-items-center" href="#">
+                                            <div class="dropdown-list-image me-3"><img class="rounded-circle" src="assets/img/avatars/avatar2.jpeg">
+                                                <div class="status-indicator"></div>
+                                            </div>
+                                            <div class="fw-bold">
+                                                <div class="text-truncate"><span>I have the photos that you ordered last month!</span></div>
+                                                <p class="small text-gray-500 mb-0">Jae Chun - 1d</p>
+                                            </div>
+                                        </a><a class="dropdown-item d-flex align-items-center" href="#">
+                                            <div class="dropdown-list-image me-3"><img class="rounded-circle" src="assets/img/avatars/avatar3.jpeg">
+                                                <div class="bg-warning status-indicator"></div>
+                                            </div>
+                                            <div class="fw-bold">
+                                                <div class="text-truncate"><span>Last month's report looks great, I am very happy with the progress so far, keep up the good work!</span></div>
+                                                <p class="small text-gray-500 mb-0">Morgan Alvarez - 2d</p>
+                                            </div>
+                                        </a><a class="dropdown-item d-flex align-items-center" href="#">
+                                            <div class="dropdown-list-image me-3"><img class="rounded-circle" src="assets/img/avatars/avatar5.jpeg">
+                                                <div class="bg-success status-indicator"></div>
+                                            </div>
+                                            <div class="fw-bold">
+                                                <div class="text-truncate"><span>Am I a good boy? The reason I ask is because someone told me that people say this to all dogs, even if they aren't good...</span></div>
+                                                <p class="small text-gray-500 mb-0">Chicken the Dog · 2w</p>
+                                            </div>
+                                        </a><a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
                                     </div>
                                 </div>
                                 <div class="shadow dropdown-list dropdown-menu dropdown-menu-end" aria-labelledby="alertsDropdown"></div>
@@ -132,7 +169,7 @@
                                                             <th style="color: rgb(0,150,255);">Address</th>
                                                             <th style="color: rgb(0,150,255);">Date</th>
                                                             <th style="color: rgb(0,150,255);">Amount</th>
-                                                            <th style="color: rgb(0,150,255);">Approve</th>
+                                                            <th style="color: rgb(0,150,255);">Action</th>
                                                         </tr>
                                                     ';
                                                 }
@@ -157,7 +194,11 @@
                                                                 <td>'.$custVal->cust_address.'</td>
                                                                 <td>'.$reqVal->req_date.'</td>
                                                                 <td>R'.$reqVal->req_amnt.'</td>
-                                                                <td class="d-xl-flex justify-content-xl-center align-items-xl-center pulse animated"><button class="btn" type="button" style="padding-top: 0px;padding-bottom: 0px;padding-right: 0px;padding-left: 0px;"><i class="icon ion-android-checkmark-circle" style="font-size: 20px;color: rgb(4,181,0);"></i></button></td>
+                                                                <td class="d-xl-flex justify-content-xl-center align-items-xl-center pulse animated">
+                                                                    <div><a class="btn btn-sm" role="button" href="#myModal" data-bs-toggle="modal" 
+                                                                    style="--bs-success: #00ff57;--bs-success-rgb: 0,255,87;--bs-body-bg: #00ff38;background: var(--bs-info);color: rgb(255,255,255);">Make Offer</a>
+                                                                    </div>
+                                                                    </td>
                                                             </tr>
                                                         ';
                                                     }
@@ -194,13 +235,93 @@
                                 <div class="col-md-6">
                                     <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
                                         <ul class="pagination">
-                                            <li class="page-item disabled"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">�</span></a></li>
+                                            <li class="page-item disabled"><a class="page-link" aria-label="Previous" href="#"><span aria-hidden="true">«</span></a></li>
                                             <li class="page-item active"><a class="page-link" href="#">1</a></li>
                                             <li class="page-item"><a class="page-link" href="#">2</a></li>
                                             <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                            <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">�</span></a></li>
+                                            <li class="page-item"><a class="page-link" aria-label="Next" href="#"><span aria-hidden="true">»</span></a></li>
                                         </ul>
                                     </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" role="dialog" tabindex="-1" id="myModal">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 style="font-size: 25px;font-weight: bold;color: var(--bs-info);">Terms and conditions</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form method="post">
+                                        <div class="mb-3">
+                                            <textarea class="form-control" id="message-1" required="" name="terms" rows="6" placeholder="Write your terms and conditions here" style="text-align: left;"></textarea></div>
+                                        <div class="mb-3">
+                                            <p style="color: var(--bs-info);font-size: 20px;font-weight: bold;">Choose payback date</p>
+                                        </div>
+                                        <div class="d-xxl-flex justify-content-xxl-center mb-3">
+                                            <div class="row d-xxl-flex justify-content-xxl-center">
+                                                <div class="col-sm-12 d-xxl-flex justify-content-xxl-center">
+                                                    <select class="form-select display-inline-block" name="">
+                                                        <option value="1" selected="">January</option>
+                                                        <option value="2">February</option>
+                                                        <option value="3">March</option>
+                                                        <option value="4">April</option>
+                                                        <option value="5">May</option>
+                                                        <option value="6">June</option>
+                                                        <option value="7">July</option>
+                                                        <option value="8">August</option>
+                                                        <option value="9">September</option>
+                                                        <option value="10">October</option>
+                                                        <option value="11">November</option>
+                                                        <option value="12">December</option>
+                                                    </select>
+                                                    <select class="form-select display-inline-block">
+                                                        <option value="1" selected="">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value="10">10</option>
+                                                        <option value="11">11</option>
+                                                        <option value="12">12</option>
+                                                        <option value="13">13</option>
+                                                        <option value="14">14</option>
+                                                        <option value="15">15</option>
+                                                        <option value="16">16</option>
+                                                        <option value="17">17</option>
+                                                        <option value="18">18</option>
+                                                        <option value="19">19</option>
+                                                        <option value="20">20</option>
+                                                        <option value="21">21</option>
+                                                        <option value="22">22</option>
+                                                        <option value="23">23</option>
+                                                        <option value="24">24</option>
+                                                        <option value="25">25</option>
+                                                        <option value="26">26</option>
+                                                        <option value="27">27</option>
+                                                        <option value="28">28</option>
+                                                        <option value="29">29</option>
+                                                        <option value="30">30</option>
+                                                        <option value="31">31</option>
+                                                    </select>
+                                                    <select class="form-select display-inline-block">
+                                                        <option value="2023" selected="">2022</option>
+                                                        <option value="2023">2023</option>
+                                                        <option value="2024">2024</option>
+                                                    </select></div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button>
+                                            <button class="btn btn-primary" type="submit">Save</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -209,13 +330,14 @@
             </div>
             <footer class="bg-white sticky-footer">
                 <div class="container my-auto">
-                    <div class="text-center my-auto copyright"><span>Copyright � P2P FinTech (Pty) Ltd 2022</span></div>
+                    <div class="text-center my-auto copyright"><span>Copyright © P2P FinTech (Pty) Ltd 2022</span></div>
                 </div>
             </footer>
         </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
     </div>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.2/bootstrap-slider.min.js"></script>
     <script src="assets/js/Range-selector---slider.js"></script>
     <script src="assets/js/theme.js"></script>

@@ -23,6 +23,26 @@
 
 <body id="page-top">
     <div id="wrapper">
+    <div class="modal fade" id="logoutDialog" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Logout confirmation</h5>
+                                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Are you sure?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href = "login">
+                                            <button type="button" id="logoutButton" class="btn btn-primary">Yes, logout</button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
         <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0" style="background: var(--bs-info);">
             <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
                     <div class="sidebar-brand-icon rotate-n-15"><i class="fa fa-money"></i></div>
@@ -190,6 +210,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.2/bootstrap-slider.min.js"></script>
     <script src="assets/js/Range-selector---slider.js"></script>
     <script src="assets/js/theme.js"></script>
+    </script>
+
+    <script>
+        document.getElementById('logout').onclick = function(){
+            $('#logoutDialog').modal('show');
+        }
+    </script>
 </body>
 
 </html>

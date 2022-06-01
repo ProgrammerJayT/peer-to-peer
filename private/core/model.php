@@ -96,4 +96,34 @@ class Model extends Database {
 
         return $this->query($query, $data);
     }
+
+    public function update_investor($id, $data){
+
+        $str = "";
+        foreach ($data as $key => $value) {
+            $str .= $key. "=:". $key. ",";
+        }
+
+        $str = trim($str, ",");
+
+        $data['inv_uid'] = $id;
+        $query = "update $this->table set $str where inv_uid = :inv_uid";
+
+        return $this->query($query, $data);
+    }
+
+    public function update_auth($id, $data){
+
+        $str = "";
+        foreach ($data as $key => $value) {
+            $str .= $key. "=:". $key. ",";
+        }
+
+        $str = trim($str, ",");
+
+        $data['auth_email'] = $id;
+        $query = "update $this->table set $str where auth_email = :auth_email";
+
+        return $this->query($query, $data);
+    }
 }

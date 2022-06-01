@@ -18,6 +18,10 @@ class SponsorCustomer extends Controller {
             }
         }
 
+        if (isset($_POST['terms'])){
+            
+        }
+
 
         $this->view('loan/applications',
         ['requests' => $reqData, 'customer' => $custData, 'available' => $availableApplications]);

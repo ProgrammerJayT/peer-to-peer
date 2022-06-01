@@ -113,20 +113,38 @@
                                         </div>
                                         <div class="card-body">
                                             <form method="post">
+                                                <?php if(count($errors) > 0) : ?>
+                                                <div class="alert alert-warning alert-dismissible fade show p-1" role="alert">
+                                                    <strong>Oops! </strong>
+                                                    <?php foreach ($errors as $error):?>
+                                                    <br> <?=$error?>
+                                                    <?php endforeach;?>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                </div>
+
+                                                <?php endif;?>
+
+                                                <?php if(count($alerts) > 0) : ?>
+                                                <div class="alert alert-success alert-dismissible fade show p-1" role="alert">
+                                                    <strong>Yay! </strong>
+                                                    <?php foreach ($alerts as $alert):?>
+                                                    <br> <?=$alert?>
+                                                    <?php endforeach;?>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                </div>
+
+                                                <?php endif;?>
                                                 <div class="row">
                                                     <div class="col">
-                                                        <div class="mb-3"><label class="form-label" for="username"><strong>Username</strong></label><input class="form-control" type="text" id="username" placeholder="<?=$username?>" name="username"></div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="mb-3"><label class="form-label" for="email"><strong>Email Address</strong></label><input class="form-control" type="email" id="email" placeholder="<?=$email?>" name="email"></div>
+                                                        <div class="mb-3"><label class="form-label"><strong>Username</strong></label><input class="form-control" required="" type="text" id="username" value="<?=$username?>" name="username"></div>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col">
-                                                        <div class="mb-3"><label class="form-label" for="first_name"><strong>First Name</strong></label><input class="form-control" type="text" id="first_name" placeholder="<?=$name?>" name="first_name"></div>
+                                                        <div class="mb-3"><label class="form-label"><strong>First Name</strong></label><input class="form-control" required="" type="text" value="<?=$name?>" name="name"></div>
                                                     </div>
                                                     <div class="col">
-                                                        <div class="mb-3"><label class="form-label" for="last_name"><strong>Last Name</strong></label><input class="form-control" type="text" id="last_name" placeholder="<?=$surname?>" name="last_name"></div>
+                                                        <div class="mb-3"><label class="form-label"><strong>Last Name</strong></label><input class="form-control" required="" type="text" value="<?=$surname?>" name="surname"></div>
                                                     </div>
                                                 </div>
                                                 <div class="mb-3"><button class="btn btn-primary btn-sm" style="background: var(--bs-info)" type="submit">Save Settings</button></div>
@@ -169,6 +187,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.2/bootstrap-slider.min.js"></script>
     <script src="assets/js/Range-selector---slider.js"></script>
     <script src="assets/js/theme.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script>
+        document.getElementById('submit_1').onclick = function(){
+            $('#toastMessage').modal('show');
+        }
+    </script>
 </body>
 
 </html>

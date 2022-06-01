@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Profile - Brand</title>
+    <title>Profile</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Advent+Pro">
@@ -106,8 +106,22 @@
                     <div class="row mb-3">
                         <div class="col-lg-4">
                             <div class="card mb-3">
-                                <div class="card-body text-center shadow"><img class="rounded-circle mb-3 mt-4" src="assets/img/avatars/avatar1.jpeg" width="160" height="160">
-                                    <div class="mb-3"><button class="btn btn-primary btn-sm" type="button" style="background: var(--bs-info);">Change Photo</button></div>
+                                <div class="card-body text-center shadow"><img class="rounded-circle mb-3 mt-4" src="assets/img/shin-min-jeong-.jpg" width="160" height="160">
+                                    <div class="mb-3">
+                                        <div id="modal-open">
+                                            <div class="modal fade" role="dialog" tabindex="-1" id="exampleModal" aria-labelledby="exampleModalLabel">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h4>Choose picture</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body"><input type="file" style="border: 1px solid rgb(235,235,238);border-top-right-radius: 10px;border-bottom-right-radius: 10px;color: var(--bs-info);" name="profile_picture" required="" accept="image/*"></div>
+                                                        <div class="modal-footer" style="border-width: 0px;"><button class="btn" type="submit" style="background: var(--bs-gray-900);color: #ffffff;">Upload</button></div>
+                                                    </div>
+                                                </div>
+                                            </div><button class="btn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" style="color: var(--bs-body-bg);font-weight: bold;background: var(--bs-info);">Change profile image</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -119,21 +133,47 @@
                                             <p class="m-0 fw-bold" style="color: rgb(255,255,255);">User Settings</p>
                                         </div>
                                         <div class="card-body">
-                                            <form>
+                                            <form method="post">
                                                 <div class="row">
+
+                                                <?php if(count($errors) > 0) : ?>
+                                                <div class="alert alert-warning alert-dismissible fade show p-1" role="alert">
+                                                    <strong>Oops! </strong>
+                                                    <?php foreach ($errors as $error):?>
+                                                    <br> <?=$error?>
+                                                    <?php endforeach;?>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                </div>
+
+                                                <?php endif;?>
+
+                                                <?php if(count($alerts) > 0) : ?>
+                                                <div class="alert alert-success alert-dismissible fade show p-1" role="alert">
+                                                    <strong>Yay! </strong>
+                                                    <?php foreach ($alerts as $alert):?>
+                                                    <br> <?=$alert?>
+                                                    <?php endforeach;?>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                </div>
+
+                                                <?php endif;?>
+
                                                     <div class="col">
-                                                        <div class="mb-3"><label class="form-label" for="username"><strong>Username</strong></label><input class="form-control" type="text" id="username" placeholder="user.name" name="username"></div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="mb-3"><label class="form-label" for="email"><strong>Email Address</strong></label><input class="form-control" type="email" id="email" placeholder="user@example.com" name="email"></div>
+                                                        <div class="mb-3">
+                                                            <label class="form-label"><strong>Username</strong></label>
+                                                            <input class="form-control" value="<?=$data->inv_username?>" type="text" id="profile_username" required="" minlength="8" maxlength="10" placeholder="Username" name="username"></div>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col">
-                                                        <div class="mb-3"><label class="form-label" for="first_name"><strong>First Name</strong></label><input class="form-control" type="text" id="first_name" placeholder="John" name="first_name"></div>
+                                                        <div class="mb-3">
+                                                            <label class="form-label"><strong>First Name</strong></label>
+                                                                <input class="form-control" value="<?=$data->inv_fname?>" type="text" id="first_name" placeholder="John" name="first_name"></div>
                                                     </div>
                                                     <div class="col">
-                                                        <div class="mb-3"><label class="form-label" for="last_name"><strong>Last Name</strong></label><input class="form-control" type="text" id="last_name" placeholder="Doe" name="last_name"></div>
+                                                        <div class="mb-3">
+                                                            <label class="form-label"><strong>Last Name</strong></label>
+                                                            <input class="form-control" value="<?=$data->inv_lname?>" type="text" id="last_name" placeholder="Doe" name="last_name"></div>
                                                     </div>
                                                 </div>
                                                 <div class="mb-3"><button class="btn btn-primary btn-sm" type="submit" style="background: var(--bs-info);">Save Settings</button></div>
@@ -145,17 +185,19 @@
                                             <p class="m-0 fw-bold" style="color: rgb(255,255,255);">Contact Settings</p>
                                         </div>
                                         <div class="card-body">
-                                            <form>
-                                                <div class="mb-3"><label class="form-label" for="address"><strong>Address</strong></label><input class="form-control" type="text" id="address" placeholder="226 West Street Pretoria North" name="address"></div>
+                                            <form method="post">
+                                                <div class="mb-3"><label class="form-label" for="address">
+                                                    <strong>Address</strong></label>
+                                                    <input class="form-control" type="text" id="profile_address" placeholder="<?=$data->inv_address?>" name="address"></div>
                                                 <div class="row">
                                                     <div class="col">
-                                                        <div class="mb-3"><label class="form-label" for="city"><strong>Phone</strong></label><input class="form-control" type="text" id="city" name="profile_phone" inputmode="numeric" required="" minlength="10" maxlength="10" placeholder="0715807306"></div>
+                                                        <div class="mb-3"><label class="form-label" for="phone"><strong>Phone</strong></label><input class="form-control" type="text" id="profile_phone" name="profile_phone" inputmode="numeric" required="" minlength="10" maxlength="10" placeholder="0715807306"></div>
                                                     </div>
                                                     <div class="col">
-                                                        <div class="mb-3"><label class="form-label" for="country"><strong>Email</strong></label><input class="form-control" type="text" id="country" name="profile_email" required="" inputmode="email" placeholder="user@address.co.za"></div>
+                                                        <div class="mb-3"><label class="form-label" for="email"><strong>Email</strong></label><input class="form-control" type="text" id="profile_email" name="profile_email" required="" inputmode="email" placeholder="user@address.co.za"></div>
                                                     </div>
                                                 </div>
-                                                <div class="mb-3"><button class="btn btn-primary btn-sm" type="submit" style="background: var(--bs-info);">Save&nbsp;Settings</button></div>
+                                                <div class="mb-3"><button class="btn btn-primary btn-sm" id="submit_1" type="submit" style="background: var(--bs-info);">Save&nbsp;Settings</button></div>
                                             </form>
                                         </div>
                                     </div>
@@ -176,6 +218,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.2/bootstrap-slider.min.js"></script>
     <script src="assets/js/Range-selector---slider.js"></script>
     <script src="assets/js/theme.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script>
+        document.getElementById('submit_1').onclick = function(){
+            $('#toastMessage').modal('show');
+        }
+    </script>
 </body>
 
 </html>
