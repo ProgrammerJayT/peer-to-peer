@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Table - Brand</title>
+    <title>Sponsor Customer</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Advent+Pro">
@@ -195,7 +195,7 @@
                                                                 <td>'.$reqVal->req_date.'</td>
                                                                 <td>R'.$reqVal->req_amnt.'</td>
                                                                 <td class="d-xl-flex justify-content-xl-center align-items-xl-center pulse animated">
-                                                                    <div><a class="btn btn-sm" role="button" href="#myModal" data-bs-toggle="modal" 
+                                                                    <div><a class="btn btn-sm" href="SponsorCustomer?id='.$reqVal->req_id.'" role="button"
                                                                     style="--bs-success: #00ff57;--bs-success-rgb: 0,255,87;--bs-body-bg: #00ff38;background: var(--bs-info);color: rgb(255,255,255);">Make Offer</a>
                                                                     </div>
                                                                     </td>
@@ -220,7 +220,7 @@
                                                             <th style="color: rgb(0,150,255);">Address</th>
                                                             <th style="color: rgb(0,150,255);">Date</th>
                                                             <th style="color: rgb(0,150,255);">Amount</th>
-                                                            <th style="color: rgb(0,150,255);">Approve</th>
+                                                            <th style="color: rgb(0,150,255);">Action</th>
                                                         </tr>
                                                     ';
                                                 }
@@ -242,6 +242,17 @@
                                             <li class="page-item"><a class="page-link" aria-label="Next" href="#"><span aria-hidden="true">»</span></a></li>
                                         </ul>
                                     </nav>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="loanTerms" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content" style="background: #00cc21;border-radius: 15px;">
+                                    <div class="d-xl-flex justify-content-xl-center align-items-xl-center bounce animated">
+                                        <div class="d-xl-flex align-items-xl-center" style="margin-left: 10px;background: #ffffff;width: 100%;border-radius: 10px;border: 1px solid rgb(238,238,239);">
+                                            <p style="padding: 10px;margin-bottom: 0px;"><?=$toast?></p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -341,6 +352,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.2/bootstrap-slider.min.js"></script>
     <script src="assets/js/Range-selector---slider.js"></script>
     <script src="assets/js/theme.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 </body>
 
 </html>

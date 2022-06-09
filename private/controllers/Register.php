@@ -14,6 +14,16 @@ class Register extends Controller
             $auth = new Auth();
 
             if($user->validate($_POST)){
+
+                $gender = '';
+                $genderPos = $_POST['id'];
+
+                if ($genderPos[6] <=4){
+                    $gender = 'female';
+                } else {
+                    $gender = 'male';
+                }
+
                 if($_POST['user'] == 'customer'){
 
                     $cust['cust_fname'] = $_POST['name'];
@@ -22,8 +32,8 @@ class Register extends Controller
                     $cust['cust_email'] = $_POST['email'];
                     $cust['cust_phone'] = $_POST['phone'];
                     $cust['cust_username'] = $_POST['username'];
-
-                    $cust['cust_gender'] = "Unverified";
+                    $cust['cust_id'] = $_POST['id'];
+                    $cust['cust_gender'] = $gender;
                     $customer->insert($cust);
                 }
                 else {
@@ -33,8 +43,8 @@ class Register extends Controller
                     $inv['inv_email'] = $_POST['email'];
                     $inv['inv_address'] = $_POST['address'];
                     $inv['inv_username'] = $_POST['username'];
-
-                    $inv['inv_gender'] = "Unverified";
+                    $inv['inv_id'] = $_POST['id'];
+                    $inv['inv_gender'] = $gender;
                     $investor->insert($inv);
                 }
 

@@ -1,29 +1,18 @@
 <?php
 
-class SponsorCustomer extends Controller {
-
-    function index() {
-
+class SponsorCustomer extends Controller{
+    function index(){
         $request = new Request();
         $customer = new Customer();
 
-        $reqData = $request->findAll();
-        $custData = $customer->findAll();
+        $reqData = $request->where('req_id', $_GET['id']);
+        $reqData = $reqData[0];
 
-        $availableApplications = 0;
+        $custData = $customer->where('cust_uid', $reqData->cust_uid);
+        $custData = $custData[0];
 
-        foreach ($reqData as $reqKey => $reqVal){
-            if ($reqVal->is_approved == false){
-                $availableApplications = $availableApplications + 1;
-            }
-        }
+        $this->view('loan/sponsor',
+        ['request' => $reqData, 'customer' => $custData]);
 
-        if (isset($_POST['terms'])){
-            
-        }
-
-
-        $this->view('loan/applications',
-        ['requests' => $reqData, 'customer' => $custData, 'available' => $availableApplications]);
     }
 }

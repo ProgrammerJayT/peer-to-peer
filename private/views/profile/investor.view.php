@@ -33,7 +33,7 @@
                     <li class="nav-item"><a class="nav-link" href="InvestorDashboard"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
                     <li class="nav-item"><a class="nav-link active"><i class="fas fa-user"></i><span>Profile</span></a></li>
                     <li class="nav-item"><a class="nav-link" href=""><i class="fa fa-wpforms"></i><span>Sponsored loans</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="SponsorCustomer"><i class="fa fa-hand-pointer-o"></i><span>Sponsor a customer</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="CustomerRequests"><i class="fa fa-hand-pointer-o"></i><span>Sponsor a customer</span></a></li>
                     <li class="nav-item"><a class="nav-link" href=""><i class="fa fa-file-pdf-o"></i><span>Statements</span></a></li>
                 </ul>
                 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>

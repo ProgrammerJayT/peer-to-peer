@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
-<body style="background: rgb(255,255,255);">
+<body style="background: rgb(255,255,255);margin-top:50px">
     <div class="contenedorPrimario">
         <h1 class="padMar headerOmolds text-center"> <img src="assets/img/logo_system.jpg" style="width: 300px;"></h1>
     </div>
@@ -55,4 +55,3 @@
 </body>
 
 </html>
-<?php $this->view('footer') ?>

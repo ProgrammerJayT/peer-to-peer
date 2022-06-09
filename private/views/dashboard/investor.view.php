@@ -32,7 +32,7 @@
                     <li class="nav-item"><a class="nav-link active"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="InvestorProfile"><i class="fas fa-user"></i><span>Profile</span></a></li>
                     <li class="nav-item"><a class="nav-link" href=""><i class="fa fa-wpforms"></i><span>Sponsored loans</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="SponsorCustomer"><i class="fa fa-hand-pointer-o"></i><span>Sponsor a customer</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="CustomerRequests"><i class="fa fa-hand-pointer-o"></i><span>Sponsor a customer</span></a></li>
                     <li class="nav-item"><a class="nav-link" href=""><i class="fa fa-file-pdf-o"></i><span>Statements</span></a></li>
                 </ul>
                 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
@@ -116,7 +116,7 @@
                                 <div class="modal-content" style="background: #00cc21;border-radius: 15px;">
                                     <div class="d-xl-flex justify-content-xl-center align-items-xl-center bounce animated">
                                         <div class="d-xl-flex align-items-xl-center" style="margin-left: 10px;background: #ffffff;width: 100%;border-radius: 10px;border: 1px solid rgb(238,238,239);">
-                                            <p style="padding: 10px;margin-bottom: 0px;"><?=$toast.' '.$name?></p>
+                                            <p style="padding: 10px;margin-bottom: 0px;"><?=$toast?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -168,11 +168,6 @@
                     </div>
                 </div>
             </div>
-            <footer class="bg-white sticky-footer">
-                <div class="container my-auto">
-                    <div class="text-center my-auto copyright"><span>Copyright � P2P FinTech (Pty) Ltd 2022</span></div>
-                </div>
-            </footer>
         </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
     </div>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
@@ -204,6 +199,7 @@
     <script>
         document.getElementById('logout').onclick = function(){
             $('#logoutDialog').modal('show');
+            
         }
     </script>
 </body>
