@@ -54,20 +54,17 @@
                                 </div>
                             </li>
                             <li class="nav-item dropdown no-arrow mx-1">
-                                <div class="nav-item dropdown no-arrow">
-                                    <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">
-                                        <span class="badge bg-danger badge-counter">0</span><i class="fas fa-bell fa-fw"></i></a>
+                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">
+                                    <span class="badge bg-danger badge-counter">0</span><i class="fas fa-bell fa-fw"></i></a>
                                     <div class="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in">
-                                        <h6 class="dropdown-header">alerts center</h6>
-                                        <a class="dropdown-item d-flex align-items-center" href="">
-                                            <div class="me-3">
-                                                <div class="bg-primary icon-circle"><i class="fas fa-file-alt text-white"></i></div>
-                                            </div>
-                                            <div><span class="small text-gray-500">May 12, 2022</span>
+                                        <h6 class="dropdown-header" style="padding-bottom: 5px;padding-top: 5px;">alerts</h6>
+                                        <a class="dropdown-item d-flex align-items-center" href="#" style="padding-top: 5px;padding-bottom: 5px;">
+                                            <div><span class="small text-gray-500">December 12, 2019</span>
                                                 <p>A new monthly report is ready to download!</p>
                                             </div>
+                                            <div class="d-xl-flex flex-column justify-content-xl-center me-3" style="margin-left: 10px;">
+                                            <button class="btn btn-sm" type="submit" style="height: 20px;font-size: 10px;background: #008f0e;padding-top: 0;padding-bottom: 0;border-radius: 20px;color: rgb(255,255,255);margin-bottom: 5px;">Accept</button><button class="btn btn-sm" type="submit" style="height: 20px;font-size: 10px;background: #fc0000;padding-top: 0;padding-bottom: 0;border-radius: 20px;color: rgb(255,255,255);margin-bottom: 0px;">Decline</button></div>
                                         </a>
-                                        <a class="dropdown-item text-center small text-gray-500" href="">Show All Alerts</a>
                                     </div>
                                 </div>
                             </li>

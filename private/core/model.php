@@ -126,4 +126,32 @@ class Model extends Database {
 
         return $this->query($query, $data);
     }
+    public function update_loan($id, $data){
+
+        $str = "";
+        foreach ($data as $key => $value) {
+            $str .= $key. "=:". $key. ",";
+        }
+
+        $str = trim($str, ",");
+
+        $data['loan_id'] = $id;
+        $query = "update $this->table set $str where loan_id = :loan_id";
+
+        return $this->query($query, $data);
+    }
+    public function update_request($id, $data){
+
+        $str = "";
+        foreach ($data as $key => $value) {
+            $str .= $key. "=:". $key. ",";
+        }
+
+        $str = trim($str, ",");
+
+        $data['req_id'] = $id;
+        $query = "update $this->table set $str where req_id = :req_id";
+
+        return $this->query($query, $data);
+    }
 }

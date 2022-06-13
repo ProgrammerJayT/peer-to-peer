@@ -6,19 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Table - Brand</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Advent+Pro">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alfa+Slab+One">
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
     <link rel="stylesheet" href="assets/css/-Team-Rotating-Cards-BS4-.css">
+    <link rel="stylesheet" href="assets/css/3D-image.css">
     <link rel="stylesheet" href="assets/css/Animated-Header--Easy-Editable--1.css">
     <link rel="stylesheet" href="assets/css/Animated-Header--Easy-Editable-.css">
+    <link rel="stylesheet" href="assets/css/Animated-numbers-section.css">
+    <link rel="stylesheet" href="assets/css/Animated-Type-Heading.css">
+    <link rel="stylesheet" href="assets/css/Animated-Typing-With-Blinking.css">
     <link rel="stylesheet" href="assets/css/Animation-Cards-1.css">
     <link rel="stylesheet" href="assets/css/Animation-Cards.css">
+    <link rel="stylesheet" href="assets/css/Circle-Nav.css">
+    <link rel="stylesheet" href="assets/css/Countdown.css">
+    <link rel="stylesheet" href="assets/css/Date-Picker-From-and-To.css">
+    <link rel="stylesheet" href="assets/css/ebs-bootstrap-datepicker-1.css">
+    <link rel="stylesheet" href="assets/css/ebs-bootstrap-datepicker-2.css">
+    <link rel="stylesheet" href="assets/css/ebs-bootstrap-datepicker-3.css">
+    <link rel="stylesheet" href="assets/css/ebs-bootstrap-datepicker-4.css">
+    <link rel="stylesheet" href="assets/css/ebs-bootstrap-datepicker.css">
+    <link rel="stylesheet" href="assets/css/Form-Select---Full-Date---Month-Day-Year.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightpick@1.3.4/css/lightpick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.2/css/bootstrap-slider.min.css">
+    <link rel="stylesheet" href="assets/css/Multi-step-form.css">
+    <link rel="stylesheet" href="assets/css/Navbar---Logo-Middle---Phone-Logo-Middle.css">
     <link rel="stylesheet" href="assets/css/News-Cards.css">
+    <link rel="stylesheet" href="assets/css/Powerful-Calendar.css">
+    <link rel="stylesheet" href="assets/css/Slider-Range.css">
+    <link rel="stylesheet" href="assets/css/Table-With-Search-1.css">
+    <link rel="stylesheet" href="assets/css/Table-With-Search.css">
+    <link rel="stylesheet" href="assets/css/Team-with-rotating-cards.css">
 </head>
 
 <body id="page-top">
@@ -116,87 +140,113 @@
                         </ul>
                     </div>
                 </nav>
-                <div class="container-fluid">
-                    <section class="py-5">
-                        <h1 class="text-center text-uppercase" style="margin-bottom: 20px;">My loans</h1>
-                        <div class="container">
-                            <div class="row">
+                <div style="margin-top: 50px;">
 
-                            <?php
+                <?php
+                    if ($request == ''){
+                        echo /** @lang text */
+                        '<div class="alert alert-danger" role="alert">
+                            <h4 class="alert-heading">Error</h4>
+                            <p>You have not applied for any loan yet!</p>
+                            <hr>
+                            <p class="mb-0">Please apply for a loan by clicking the button below.</p>
+                        </div>';
+                    } else {
+                        if ($request->is_approved == 1){
+                            echo /** @lang text */
+                            '
+                            <div>
+                                <div class="d-xl-flex flex-row align-items-xl-center" style="width: 100%;">
+                                    <div class="d-xl-flex justify-content-xl-center align-items-xl-center" style="width: 50%;margin-left: 20px;background: var(--bs-info);border-radius: 25px;height: 100px;border-bottom: 5px solid rgb(0,152,15) ;">
+                                        <h4 class="bounce animated" style="color: rgb(255,255,255);">Loan amount:&nbsp;</h4>
+                                        <h1 class="bounce animated" style="color: rgb(255,255,255);">R3500</h1>
+                                    </div>
+                                    <div class="d-xl-flex flex-row justify-content-xl-center align-items-xl-center" style="width: 50%;margin-left: 20px;height: 100px;">
+                                        <p class="d-xl-flex justify-content-xl-center align-items-xl-center" style="margin-bottom: 0px;font-weight: bold;color: var(--bs-info);">Pending approval</p>
+                                        <div style="background: #ff0000;height: 50px;width: 50px;margin-left: 5px;border-radius: 100px;"></div>
+                                        <p class="d-xl-flex justify-content-xl-center align-items-xl-center" style="margin-bottom: 0px;margin-left: 10px;font-weight: bold;color: var(--bs-info);">Approved</p>
+                                        <div style="background: #18aa00;height: 50px;width: 50px;margin-left: 5px;border-radius: 100px;"></div>
+                                    </div>
+                                </div>
+                                <div class="d-xl-flex flex-column align-items-xl-center" style="width: 100%;margin-left: 20px;margin-top: 50px;">
+                                    <h2 style="font-weight: bold;color: var(--bs-info);">Time left to pay back loan</h2>
+                                    <div class="d-flex justify-content-center countdown" data-count="'.$loan->payback_date.'">
+                                        <div style="border-top-color: var(--bs-info);">
+                                            <h3 style="color: rgb(0,0,0);font-size: 40px;">%d</h3>
+                                            <h4>Days</h4>
+                                        </div>
+                                        <div style="border-top-color: var(--bs-info);">
+                                            <h3 style="color: rgb(0,0,0);font-size: 40px;">%h</h3>
+                                            <h4>Hours</h4>
+                                        </div>
+                                        <div style="border-top-color: var(--bs-info);">
+                                            <h3 style="color: rgb(0,0,0);font-size: 40px;">%m</h3>
+                                            <h4>Minutes</h4>
+                                        </div>
+                                        <div style="border-top-color: var(--bs-info);">
+                                            <h3 style="color: rgb(0,0,0);font-size: 40px;">%s</h3>
+                                            <h4>Seconds</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            ';
 
-                            if ($loans == ''){
-                                echo /** @lang text */
-                                'No loans were found';
-                            }
+                        }else {
+                            echo /** @lang text */
+                            '<div>
+                            <div class="d-xl-flex flex-row align-items-xl-center" style="width: 100%;">
+                                <div class="d-xl-flex justify-content-xl-center align-items-xl-center" style="width: 50%;margin-left: 20px;background: var(--bs-info);border-radius: 25px;border-bottom: 5px solid rgb(255,0,0);height: 100px;">
+                                    <h4 class="bounce animated" style="color: rgb(255,255,255);">Requested amount:&nbsp;</h4>
+                                    <h1 class="bounce animated" style="color: rgb(255,255,255);">R3500</h1>
+                                </div>
+                                <div class="d-xl-flex flex-row justify-content-xl-center align-items-xl-center" style="width: 50%;margin-left: 20px;height: 100px;">
+                                    <p class="d-xl-flex justify-content-xl-center align-items-xl-center" style="margin-bottom: 0px;font-weight: bold;color: var(--bs-info);">Pending approval</p>
+                                    <div style="background: #ff0000;height: 50px;width: 50px;margin-left: 5px;border-radius: 100px;"></div>
+                                    <p class="d-xl-flex justify-content-xl-center align-items-xl-center" style="margin-bottom: 0px;margin-left: 10px;font-weight: bold;color: var(--bs-info);">Approved</p>
+                                    <div style="background: #18aa00;height: 50px;width: 50px;margin-left: 5px;border-radius: 100px;"></div>
+                                </div>
+                            </div>
+                            <div class="d-xl-flex flex-row align-items-xl-center" style="width: 100%;margin-left: 20px;margin-top: 10px;"><button class="btn" type="submit" style="border-radius: 20px;background: #dadada;font-size: 15px;color: rgb(255,0,0);font-weight: bold;">Cancel loan request</button></div>
+                        </div>
+                            ';
+                        }
+                    }
+                ?>
 
-                            else
-                            {
-                                foreach ($loans as $key => $val)
-                                {
-                                    if ($val->is_approved == 1){
-                                        echo /** @lang text */
-                                        '<div class="col-md-6 col-lg-4">
-                                            <div class="card-container-imagia" style="border-left: 5px solid var(--bs-info) ;">
-                                                <div class="card-imagia">
-                                                    <div class="front-imagia">
-                                                        <div class="cover-imagia cover-gradient" style="background: var(--bs-info);"></div>
-                                                        <div class="d-xl-flex justify-content-xl-center user-imagia"><img class="rounded-circle" alt="" src="assets/img/WhatsApp%20Image%202022-05-20%20at%203.26.00%20PM.jpeg" width="120px" height="120px" loading="auto"></div>
-                                                        <div class="py-1 px-3 text-center">
-                                                            <h3 class="text-capitalize m-0" style="font-size: 25px;">Simon Jones</h3>
-                                                            <p class="text-secondary mb-3">Investor</p>
-                                                            <p><em><strong>You borrowed R15 301 from this investor</strong><br></em><em style="color: rgb(255,0,0);font-weight: bold;"><br>Balance to pay: R9 153<br></em></p>
-                                                        </div>
-                                                        <div class="footer-imagia w-100 text-secondary position-absolute text-center py-2"><span><i class="fa fa-plus"></i> More info</span></div>
-                                                    </div>
-                                                    <div class="back-imagia">
-                                                        <div class="d-flex align-items-center h-100 px-3">
-                                                            <div class="d-xl-flex flex-column justify-content-xl-center align-items-xl-center">
-                                                                <h2 class="text-center">Loan Info</h2>
-                                                                <p class="text-center">You have 165 days left to settle your balance, before your debt accumulates</p><a class="btn" role="button" style="background: var(--bs-info);color: rgb(255,255,255);width: 60%;margin-top: 50px;font-size: 15px;">Payment timeline</a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="footer-imagia w-100 text-secondary position-absolute text-center py-2">
-                                                            <div class="social-imagia text-center"><a class="m-2" href="#"><i class="fa fa-phone-square"></i></a><a class="m-2" href="#"><i class="fa fa-linkedin"></i></a></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>';
-                                    }
-
-                                    else {
-                                        echo /** @lang text */
-                                        '<div class="col-md-6 col-lg-4">
-                                            <div class="card-container-imagia" style="border-left: 5px solid #ffc700;border-radius: 10px;">
-                                                <div class="card-imagia">
-                                                    <div class="front-imagia">
-                                                        <div class="cover-imagia cover-gradient" style="background: #ffc700;"></div>
-                                                            <div class="py-1 px-3 text-center">
-                                                            <h3 class="text-capitalize m-0" style="font-size: 20px;padding-bottom: 50px;color: #ffc700;font-weight: bold;">Pending approval</h3>
-                                                            <p><em><strong>You have requested a loan of</strong><br></em></p>
-                                                        <h1 class="text-capitalize m-0" style="color: #00ae07;">R'.$val->req_amnt.'</h1>
-                                                    </div>
-                                                </div>
-                                                <div class="back-imagia">
-                                                    <div class="d-flex align-items-center h-100 px-3">
-                                                        <div class="d-xl-flex flex-column justify-content-xl-center align-items-xl-center" style="width: 100%;">
-                                                            <h2 class="text-center">Loan Info</h2>
-                                                            <p style="width: 100%;margin-top: 10px;">Date: '.$val->req_date.'<br>Amount: R'.$val->req_amnt.'<br>Status: Pending</p><a class="btn" role="button" style="background: #ffc700;color: rgb(255,255,255);width: 60%;margin-top: 50px;font-size: 15px;">Edit request</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>';
-                                    }
-                                }
-                            }
-
-                            ?>
-
+                    <div style="margin-right: 20px;margin-left: 20px;margin-top: 60px;">
+                        <h1 style="font-weight: bold;color: var(--bs-info);">Previous loans</h1>
+                        <div class="col-md-12 search-table-col" style="margin-top: 0px;">
+                            <div class="form-group pull-right col-lg-4" style="margin-bottom: 10px;"><input type="text" class="search form-control" placeholder="Search by typing here.." style="border-radius: 20px;"></div><span class="counter pull-right"></span>
+                            <div class="table-responsive table table-hover table-bordered results">
+                                <table class="table table-hover table-bordered">
+                                    <thead class="bill-header cs">
+                                        <tr>
+                                            <th id="trs-hd-1" class="col-lg-1" style="background: var(--bs-info);">Request Date</th>
+                                            <th id="trs-hd-2" class="col-lg-2" style="background: var(--bs-info);">Investor Name</th>
+                                            <th id="trs-hd-3" class="col-lg-3" style="background: var(--bs-info);">Investor Phone</th>
+                                            <th id="trs-hd-4" class="col-lg-2" style="background: var(--bs-info);">Investor Email</th>
+                                            <th id="trs-hd-5" class="col-lg-2" style="background: var(--bs-info);">Approval Date</th>
+                                            <th id="trs-hd-6" class="col-lg-2" style="background: var(--bs-info);">Amount</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="warning no-result">
+                                            <td colspan="12"><i class="fa fa-warning"></i>&nbsp; No Result !!!</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center;">07/06/2022</td>
+                                            <td style="text-align: center;">Maebaka Jay</td>
+                                            <td style="text-align: center;">0794194768</td>
+                                            <td style="text-align: center;">test@gmail.com</td>
+                                            <td style="text-align: center;">08/06/2022</td>
+                                            <td style="text-align: center;">6000</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
-                    </section>
+                    </div>
                 </div>
             </div>
             <footer class="bg-white sticky-footer">
@@ -207,16 +257,29 @@
         </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
     </div>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightpick@1.3.4/lightpick.min.js"></script>
+    <script src="assets/js/Date-Picker-From-and-To.js"></script>
+    <script src="assets/js/-Animated-numbers-section-BS4-.js"></script>
+    <script src="assets/js/Animated-numbers-section.js"></script>
+    <script src="assets/js/Animated-Type-Heading.js"></script>
+    <script src="assets/js/Animated-Typing-With-Blinking.js"></script>
+    <script src="assets/js/Circle-Nav.js"></script>
+    <script src="assets/js/Countdown.js"></script>
+    <script src="assets/js/DateRangePicker.js"></script>
+    <script src="assets/js/ebs-bootstrap-datepicker-1.js"></script>
+    <script src="assets/js/ebs-bootstrap-datepicker.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.2/bootstrap-slider.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+    <script src="assets/js/Multi-step-form.js"></script>
+    <script src="assets/js/Powerful-Calendar.js"></script>
     <script src="assets/js/Range-selector---slider.js"></script>
+    <script src="assets/js/Table-With-Search.js"></script>
     <script src="assets/js/theme.js"></script>
-    </script>
-
-    <script>
-        document.getElementById('logout').onclick = function(){
-            $('#logoutDialog').modal('show');
-        }
-    </script>
 </body>
 
 </html>

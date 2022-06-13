@@ -48,36 +48,41 @@
                     <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button">
                         <i class="fas fa-bars"></i></button>
                         <ul class="navbar-nav flex-nowrap ms-auto">
-                            <li class="nav-item dropdown d-sm-none no-arrow">
-                                <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="fas fa-search"></i></a>
-                                <div class="dropdown-menu dropdown-menu-end p-3 animated--grow-in" aria-labelledby="searchDropdown">
-                                    <form class="me-auto navbar-search w-100">
-                                        <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
-                                            <div class="input-group-append"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </li>
                             <li class="nav-item dropdown no-arrow mx-1">
-                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">
+                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown">
                                     <span class="badge bg-danger badge-counter">0</span><i class="fas fa-bell fa-fw"></i></a>
-                                    <div class="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in">
-                                        <h6 class="dropdown-header">alerts center</h6>
-                                        <a class="dropdown-item d-flex align-items-center" href="#">
-                                            <div class="me-3">
-                                                <div class="bg-primary icon-circle"><i class="fas fa-file-alt text-white"></i></div>
-                                            </div>
-                                            <div><span class="small text-gray-500">June 1, 2022</span>
-                                                <p>A new monthly report is ready to download!</p>
-                                            </div>
-                                        </a>
-                                        <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                                    <div class="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in" style="border-radius: 10px;border: 2px solid rgb(241,241,241) ;">
+                                        <h6 class="dropdown-header" style="padding-bottom: 5px;padding-top: 5px;background: var(--bs-info);color: var(--bs-gray-100);">alerts</h6>
+
+                                        <?php
+
+                                            if (count($offer) < 1){
+                                                echo '<div class="dropdown-divider"></div>';
+                                                echo '<a class="dropdown-item">No offers</a>';
+                                            }
+                                            else {
+                                                foreach ($offer as $itemKey => $offerVal) {
+                                                    foreach ($investor as $invKey => $invValue) {
+                                                        if ($offerVal->inv_uid == $invValue->inv_uid){
+                                                            echo /** @lang text */
+                                                            '
+                                                                <a class="dropdown-item d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex flex-row justify-content-center align-items-center justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center justify-content-xl-center justify-content-xxl-center" style="padding: 5px;" href="ViewOffer?id='.$offerVal->loan_id.'">
+                                                                    <div style="width: 100%;"><span class="small text-gray-500">December 12, 2019</span>
+                                                                        <p style="margin-bottom: 0px;">A new monthly report is ready to download!</p>
+                                                                    </div>
+                                                                </a>
+                                                            ';
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        ?>
                                     </div>
                                 </div>
                             </li>
                             <li class="nav-item dropdown no-arrow mx-1">
                                 <div class="nav-item dropdown no-arrow">
-                                    <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">
+                                    <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown">
                                         <span class="badge bg-danger badge-counter">0</span><i class="fas fa-envelope fa-fw"></i></a>
                                     <div class="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in">
                                         <h6 class="dropdown-header">alerts center</h6><a class="dropdown-item d-flex align-items-center" href="#">

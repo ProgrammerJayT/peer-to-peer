@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Peer-to-peer Admin (copy)</title>
+    <title>P2P FinTech (Pty) Ltd</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Advent+Pro">
@@ -53,25 +53,25 @@
                             <div class="front-imagia" style="background: rgba(255,255,255,0);padding-bottom: 0px;height: 100%;border-radius: 30px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;border: 0.01px none rgb(255,255,255);border-top-style: solid;border-right-style: solid;border-left-style: solid;">
                                 <div class="user-imagia" style="margin-top: 65px;"><img class="img-circle" alt="" src="assets/img/shin-min-jeong-.jpg" style="border-radius: 100px;"></div>
                                 <div class="content-imagia" style="padding-bottom: 0px;">
-                                    <h3 class="name-imagia" style="color: rgb(255,255,255);font-weight: bold;font-size: 30px;">Daniel Chuene</h3>
-                                    <p class="subtitle-imagia" style="margin-bottom: 0px;text-align: center;color: rgb(255,255,255);">Male</p>
+                                    <h3 class="name-imagia" style="color: rgb(255,255,255);font-weight: bold;font-size: 29px;"><?=$fullName?></h3>
+                                    <p class="subtitle-imagia" style="margin-bottom: 0px;text-align: center;color: rgb(255,255,255);"><?=$gender?></p>
                                     <p class="subtitle-imagia" style="margin-bottom: 0px;text-align: center;font-weight: bold;font-size: 20px;margin-top: 20px;color: rgb(255,255,255);">Contacts</p>
-                                    <p class="subtitle-imagia" style="margin-bottom: 0px;text-align: center;color: rgb(255,255,255);">dannie@tut4life.ac.za</p>
-                                    <p class="subtitle-imagia" style="margin-bottom: 0px;text-align: center;color: rgb(255,255,255);">0715807306</p>
+                                    <p class="subtitle-imagia" style="margin-bottom: 0px;text-align: center;color: rgb(255,255,255);"><?=$email?></p>
+                                    <p class="subtitle-imagia" style="margin-bottom: 0px;text-align: center;color: rgb(255,255,255);"><?=$phone?></p>
                                     <p class="subtitle-imagia" style="margin-bottom: 0px;text-align: center;font-weight: bold;font-size: 20px;margin-top: 20px;color: rgb(255,255,255);">Address</p>
-                                    <p class="subtitle-imagia" style="margin-bottom: 0px;text-align: center;color: rgb(255,255,255);">226 West Street Pretoria North</p>
+                                    <p class="subtitle-imagia" style="margin-bottom: 0px;text-align: center;color: rgb(255,255,255);"><?=$address?></p>
                                 </div>
                             </div>
                             <div class="back-imagia" style="background: rgba(255,255,255,0);">
                                 <div class="user-imagia" style="margin-top: 65px;"><img class="img-circle" alt="" src="assets/img/shin-min-jeong-.jpg" style="border-radius: 100px;"></div>
                                 <div class="content-imagia" style="padding-bottom: 0px;">
-                                    <h3 class="name-imagia" style="color: rgb(255,255,255);font-weight: bold;font-size: 30px;">Daniel Chuene</h3>
-                                    <p class="subtitle-imagia" style="margin-bottom: 0px;text-align: center;color: rgb(255,255,255);">Male</p>
+                                    <h3 class="name-imagia" style="color: rgb(255,255,255);font-weight: bold;font-size: 29px;"><?=$fullName?></h3>
+                                    <p class="subtitle-imagia" style="margin-bottom: 0px;text-align: center;color: rgb(255,255,255);"><?=$gender?></p>
                                     <p class="subtitle-imagia" style="margin-bottom: 0px;text-align: center;font-weight: bold;font-size: 20px;margin-top: 20px;color: rgb(255,255,255);">Contacts</p>
-                                    <p class="subtitle-imagia" style="margin-bottom: 0px;text-align: center;color: rgb(255,255,255);">dannie@tut4life.ac.za</p>
-                                    <p class="subtitle-imagia" style="margin-bottom: 0px;text-align: center;color: rgb(255,255,255);">0715807306</p>
+                                    <p class="subtitle-imagia" style="margin-bottom: 0px;text-align: center;color: rgb(255,255,255);"><?=$email?></p>
+                                    <p class="subtitle-imagia" style="margin-bottom: 0px;text-align: center;color: rgb(255,255,255);"><?=$phone?></p>
                                     <p class="subtitle-imagia" style="margin-bottom: 0px;text-align: center;font-weight: bold;font-size: 20px;margin-top: 20px;color: rgb(255,255,255);">Address</p>
-                                    <p class="subtitle-imagia" style="margin-bottom: 0px;text-align: center;color: rgb(255,255,255);">226 West Street Pretoria North</p>
+                                    <p class="subtitle-imagia" style="margin-bottom: 0px;text-align: center;color: rgb(255,255,255);"><?=$address?></p>
                                 </div>
                             </div>
                         </div>
@@ -82,7 +82,7 @@
                         <div class="container position-relative" style="height: 100%;">
                             <div class="row d-flex justify-content-center" style="height: 100%;">
                                 <div class="col-md-8 col-lg-6 col-xl-5 col-xxl-4" style="width: 100%;padding-right: 0;height: 100%;">
-                                    <h2 class="text-center d-xl-flex justify-content-xl-center mb-4" style="font-family: Nunito, sans-serif;color: var(--bs-blue);font-weight: bold;">Requested amount R5000</h2>
+                                    <h2 class="text-center d-xl-flex justify-content-xl-center mb-4" style="font-family: Nunito, sans-serif;color: var(--bs-blue);font-weight: bold;">Requested amount R<?=$reqAmount?></h2>
                                     <div class="card mb-5" style="background: rgba(255,255,255,0);border-style: none;height: 100%;">
                                         <div class="card-body p-sm-5" style="height: 100%;">
                                             <h2 class="text-center mb-4" style="font-family: Nunito, sans-serif;">Interest Rate</h2>
@@ -91,7 +91,7 @@
                                                 <h2 class="text-center mb-4" style="font-family: Nunito, sans-serif;margin-top: 50px;">Repayment date</h2>
                                                 <div class="d-xl-flex justify-content-xl-center" style="margin-top: 50px;">
                                                     <div class="d-xl-flex flex-row justify-content-xl-center" style="width: 50%;">
-                                                    <input class="form-control" type="date" name="date" min="<?=date("Y/m/d")?>" style="border-radius: 20px;"></div>
+                                                    <input class="form-control" id="getDate" onchange="handler(event);" type="date" required="" name="date" style="border-radius: 20px;"></div>
                                                 </div>
                                                 <div class="d-xl-flex justify-content-xl-center" style="margin-top: 50px;">
                                                     <div class="d-xl-flex flex-row align-items-xl-center" style="width: 50%;"><a class="btn d-block w-100" role="button" href="CustomerRequests" style="border-radius: 20px;background: #ff0000;color: rgb(255,255,255);font-weight: bold;margin-right: 20px;margin-left: 20px;">Cancel</a><button class="btn d-block w-100" type="submit" style="border-radius: 20px;background: #004495;color: rgb(255,255,255);font-weight: bold;margin-right: 20px;margin-left: 20px;">Submit</button></div>
@@ -130,6 +130,36 @@
     <script src="assets/js/Range-selector---slider.js"></script>
     <script src="assets/js/Table-With-Search.js"></script>
     <script src="assets/js/theme.js"></script>
+    <script>
+        function handler(e) {
+            //alert(e.target.value);
+            var year = <?php echo date("Y")?>;
+            var month = <?php echo date("m")?>;
+            var day = <?php echo date("d")?>;
+
+            var userDate = e.target.value;
+            var userYear = userDate.substring(0, 4);
+            var userMonth = userDate.substring(5, 7);
+            var userDay = userDate.substring(8, 11);
+            
+            if (userYear - year < 0){
+                alert('You cannot select a past year');
+                document.getElementById("getDate").value = "";
+            } else {
+                if (userYear - year == 0){
+                    if (userMonth - month < 0){
+                        alert('Please select a future date');
+                        document.getElementById("getDate").value = "";
+                    } else {
+                        if (userDay - day < 0){
+                            alert('Please select a future date');
+                            document.getElementById("getDate").value = "";
+                        }
+                    }
+                }
+            }
+        }
+    </script> 
 </body>
 
 </html>

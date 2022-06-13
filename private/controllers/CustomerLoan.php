@@ -9,6 +9,7 @@ class CustomerLoan extends Controller {
 
         $customer = new Customer();
         $request = new Request();
+        $loan = new Loan();
 
         if ($data = $customer->where('cust_email', $_SESSION['USER']->auth_email)){
             $data = $data[0];
@@ -18,14 +19,18 @@ class CustomerLoan extends Controller {
             $fullName = $name. ' ' .$surname;
             $id = $data->cust_uid;
 
-            if ($loans = $request->where('cust_uid', $id)){
-                if (count($loans)<1){
-                    $loans = '';
+            if ($reqData = $request->where('cust_uid', $id)){
+                if (count($reqData)<1){
+                    $reqData = '';
+                } else {
+                    $reqData = $reqData[0];
+                    $loanData = $loan->where('req_id', $reqData->req_id);
+                    $loanData = $loanData[0];
                 }
-            }
+            } 
 
             $this->view('loan/customer',
-            ['data'=>$data, 'name' => $fullName, 'loans' => $loans]);
+            ['data'=>$data, 'name' => $fullName, 'request' => $reqData, 'loan' => $loanData]);
         }
     }
 }
