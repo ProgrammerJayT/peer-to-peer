@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Table - Brand</title>
+    <title>Dashboard - Brand</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Advent+Pro">
@@ -57,7 +57,7 @@
                 <ul class="navbar-nav text-light" id="accordionSidebar">
                     <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="profile.html"><i class="fas fa-user"></i><span>Profile</span></a></li>
-                    <li class="nav-item"><a class="nav-link active" href="my_loan.html"><i class="fa fa-wpforms"></i><span>My loan</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="my_loan.html"><i class="fa fa-wpforms"></i><span>My loan</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="application.html"><i class="fa fa-hand-pointer-o"></i><span>Apply for a loan</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="statements.html"><i class="fa fa-file-pdf-o"></i><span>Statements</span></a></li>
                 </ul>
@@ -80,29 +80,12 @@
                             </li>
                             <li class="nav-item dropdown no-arrow mx-1">
                                 <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="badge bg-danger badge-counter">0</span><i class="fas fa-bell fa-fw"></i></a>
-                                    <div class="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in">
-                                        <h6 class="dropdown-header">alerts center</h6><a class="dropdown-item d-flex align-items-center" href="#">
-                                            <div class="me-3">
-                                                <div class="bg-primary icon-circle"><i class="fas fa-file-alt text-white"></i></div>
+                                    <div class="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in" style="border-radius: 10px;border: 2px solid rgb(241,241,241) ;">
+                                        <h6 class="dropdown-header" style="padding-bottom: 5px;padding-top: 5px;background: var(--bs-info);color: var(--bs-gray-100);border-style: none;">alerts</h6><a class="dropdown-item d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex flex-row justify-content-center align-items-center justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center justify-content-xl-center justify-content-xxl-center" style="padding: 5px;" href="ViewOffer">
+                                            <div style="width: 100%;"><span class="small text-gray-500">December 12, 2019</span>
+                                                <p style="margin-bottom: 0px;">A new monthly report is ready to download!</p>
                                             </div>
-                                            <div><span class="small text-gray-500">December 12, 2019</span>
-                                                <p>A new monthly report is ready to download!</p>
-                                            </div>
-                                        </a><a class="dropdown-item d-flex align-items-center" href="#">
-                                            <div class="me-3">
-                                                <div class="bg-success icon-circle"><i class="fas fa-donate text-white"></i></div>
-                                            </div>
-                                            <div><span class="small text-gray-500">December 7, 2019</span>
-                                                <p>$290.29 has been deposited into your account!</p>
-                                            </div>
-                                        </a><a class="dropdown-item d-flex align-items-center" href="#">
-                                            <div class="me-3">
-                                                <div class="bg-warning icon-circle"><i class="fas fa-exclamation-triangle text-white"></i></div>
-                                            </div>
-                                            <div><span class="small text-gray-500">December 2, 2019</span>
-                                                <p>Spending Alert: We've noticed unusually high spending for your account.</p>
-                                            </div>
-                                        </a><a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                                        </a>
                                     </div>
                                 </div>
                             </li>
@@ -157,54 +140,43 @@
                         </ul>
                     </div>
                 </nav>
-                <div style="margin-top: 50px;">
-                    <div>
-                        <div class="d-xl-flex flex-row align-items-xl-center" style="width: 100%;">
-                            <div class="d-xl-flex justify-content-xl-center align-items-xl-center" style="width: 50%;margin-left: 20px;background: var(--bs-info);border-radius: 25px;border-bottom: 5px solid rgb(255,0,0);height: 100px;">
-                                <h4 class="bounce animated" style="color: rgb(255,255,255);">Requested amount:&nbsp;</h4>
-                                <h1 class="bounce animated" style="color: rgb(255,255,255);">R3500</h1>
-                            </div>
-                            <div class="d-xl-flex flex-row justify-content-xl-center align-items-xl-center" style="width: 50%;margin-left: 20px;height: 100px;">
-                                <p class="d-xl-flex justify-content-xl-center align-items-xl-center" style="margin-bottom: 0px;font-weight: bold;color: var(--bs-info);">Pending approval</p>
-                                <div style="background: #ff0000;height: 50px;width: 50px;margin-left: 5px;border-radius: 100px;"></div>
-                                <p class="d-xl-flex justify-content-xl-center align-items-xl-center" style="margin-bottom: 0px;margin-left: 10px;font-weight: bold;color: var(--bs-info);">Approved</p>
-                                <div style="background: #18aa00;height: 50px;width: 50px;margin-left: 5px;border-radius: 100px;"></div>
-                            </div>
-                        </div>
-                        <div class="d-xl-flex flex-row align-items-xl-center" style="width: 100%;margin-left: 20px;margin-top: 10px;"><button class="btn" type="submit" style="border-radius: 20px;background: #dadada;font-size: 15px;color: rgb(255,0,0);font-weight: bold;">Cancel loan request</button></div>
+                <div class="container-fluid">
+                    <div class="d-sm-flex justify-content-between align-items-center mb-4">
+                        <h3 class="mb-0" style="color: var(--bs-info);">Dashboard</h3>
                     </div>
-                    <div style="margin-right: 20px;margin-left: 20px;margin-top: 60px;">
-                        <h1 style="font-weight: bold;color: var(--bs-info);">Previous loans</h1>
-                        <div class="col-md-12 search-table-col" style="margin-top: 0px;">
-                            <div class="form-group pull-right col-lg-4" style="margin-bottom: 10px;"><input type="text" class="search form-control" placeholder="Search by typing here.." style="border-radius: 20px;"></div><span class="counter pull-right"></span>
-                            <div class="table-responsive table table-hover table-bordered results">
-                                <table class="table table-hover table-bordered">
-                                    <thead class="bill-header cs">
-                                        <tr>
-                                            <th id="trs-hd-1" class="col-lg-1" style="background: var(--bs-info);">Request Date</th>
-                                            <th id="trs-hd-2" class="col-lg-2" style="background: var(--bs-info);">Investor Name</th>
-                                            <th id="trs-hd-3" class="col-lg-3" style="background: var(--bs-info);">Investor Phone</th>
-                                            <th id="trs-hd-4" class="col-lg-2" style="background: var(--bs-info);">Investor Email</th>
-                                            <th id="trs-hd-5" class="col-lg-2" style="background: var(--bs-info);">Approval Date</th>
-                                            <th id="trs-hd-6" class="col-lg-2" style="background: var(--bs-info);">Amount</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr class="warning no-result">
-                                            <td colspan="12"><i class="fa fa-warning"></i>&nbsp; No Result !!!</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: center;">07/06/2022</td>
-                                            <td style="text-align: center;">Maebaka Jay</td>
-                                            <td style="text-align: center;">0794194768</td>
-                                            <td style="text-align: center;">test@gmail.com</td>
-                                            <td style="text-align: center;">08/06/2022</td>
-                                            <td style="text-align: center;">6000</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                    <div class="d-flex d-sm-flex justify-content-center align-items-center justify-content-xl-center mb-4" style="width: 100%;">
+                        <div class="d-lg-flex flex-row justify-content-lg-center align-items-lg-center" style="width: 100%;">
+                            <div style="width: 100%;">
+                                <p style="margin-bottom: 0px;font-weight: bold;color: var(--bs-danger);">Loan balance to pay</p>
+                                <h1 style="color: var(--bs-info);font-weight: bold;font-size: 35px;">R5500</h1>
+                            </div>
+                            <div class="d-flex justify-content-center countdown" data-count="2022/12/31">
+                                <div style="padding-top: 5px;padding-bottom: 5px;border-top-style: none;border-top-color: #ff0000;color: var(--bs-info);margin-bottom: 0px;margin-top: 0px;margin-right: 0px;margin-left: 0px;">
+                                    <h3 style="font-size: 40px;border-top-color: var(--bs-info);margin-bottom: 5px;">%d</h3>
+                                    <h4 style="font-size: 15px;font-weight: bold;border-top-color: var(--bs-info);">Days</h4>
+                                </div>
+                                <div style="padding-top: 5px;padding-bottom: 5px;border-top-style: none;border-top-color: #ff0000;color: var(--bs-info);margin-bottom: 0px;margin-top: 0px;margin-right: 0px;margin-left: 0px;">
+                                    <h3 style="font-size: 40px;border-top-color: var(--bs-info);margin-bottom: 5px;">%h</h3>
+                                    <h4 style="font-size: 15px;font-weight: bold;border-top-color: var(--bs-info);">Hours</h4>
+                                </div>
+                                <div style="padding-top: 5px;padding-bottom: 5px;border-top-style: none;border-top-color: #ff0000;color: var(--bs-info);margin-bottom: 0px;margin-top: 0px;margin-right: 0px;margin-left: 0px;">
+                                    <h3 style="font-size: 40px;border-top-color: var(--bs-info);margin-bottom: 5px;">%m</h3>
+                                    <h4 style="font-size: 15px;font-weight: bold;border-top-color: var(--bs-info);">Minutes</h4>
+                                </div>
+                                <div style="padding-top: 5px;padding-bottom: 5px;border-top-style: none;border-top-color: #ff0000;color: var(--bs-info);margin-top: 0px;margin-bottom: 0px;margin-right: 0px;margin-left: 0px;">
+                                    <h3 style="font-size: 40px;border-top-color: var(--bs-info);margin-bottom: 5px;">%s</h3>
+                                    <h4 style="font-size: 15px;font-weight: bold;border-top-color: var(--bs-info);">Seconds</h4>
+                                </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="d-flex d-sm-flex flex-row align-items-center justify-content-xxl-center mb-4" style="width: 100%;">
+                        <lottie-player src="assets/js/28784-businessmen-at-the-table.json" mode="normal" style="width: 40%;" autoplay="" loop=""></lottie-player>
+                        <div style="width: 20%;"></div>
+                        <lottie-player src="assets/js/71804-business.json" mode="normal" style="width: 40%;" autoplay="" loop=""></lottie-player>
+                    </div>
+                    <div class="d-sm-flex justify-content-between justify-content-lg-center justify-content-xl-center justify-content-xxl-center align-items-xxl-center mb-4">
+                        <h3 class="mb-0" style="color: var(--bs-info);">Get started by applying for a loan</h3><a class="btn" role="button" style="margin-left: 50px;border-radius: 20px;background: var(--bs-info);color: rgb(255,255,255);width: 20%;" href="Application">Apply Now&nbsp;<i class="fas fa-plus"></i></a>
                     </div>
                 </div>
             </div>
@@ -216,6 +188,7 @@
         </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
     </div>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/lottie-player.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>

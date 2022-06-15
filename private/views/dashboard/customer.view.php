@@ -22,6 +22,45 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.2/css/bootstrap-slider.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Advent+Pro">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alfa+Slab+One">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="assets/css/-Filterable-Cards-.css">
+    <link rel="stylesheet" href="assets/css/-Team-Rotating-Cards-BS4-.css">
+    <link rel="stylesheet" href="assets/css/3D-image.css">
+    <link rel="stylesheet" href="assets/css/Animated-Header--Easy-Editable--1.css">
+    <link rel="stylesheet" href="assets/css/Animated-Header--Easy-Editable-.css">
+    <link rel="stylesheet" href="assets/css/Animated-numbers-section.css">
+    <link rel="stylesheet" href="assets/css/Animated-Type-Heading.css">
+    <link rel="stylesheet" href="assets/css/Animated-Typing-With-Blinking.css">
+    <link rel="stylesheet" href="assets/css/Animation-Cards-1.css">
+    <link rel="stylesheet" href="assets/css/Animation-Cards.css">
+    <link rel="stylesheet" href="assets/css/Circle-Nav.css">
+    <link rel="stylesheet" href="assets/css/Countdown.css">
+    <link rel="stylesheet" href="assets/css/Date-Picker-From-and-To.css">
+    <link rel="stylesheet" href="assets/css/ebs-bootstrap-datepicker-1.css">
+    <link rel="stylesheet" href="assets/css/ebs-bootstrap-datepicker-2.css">
+    <link rel="stylesheet" href="assets/css/ebs-bootstrap-datepicker-3.css">
+    <link rel="stylesheet" href="assets/css/ebs-bootstrap-datepicker-4.css">
+    <link rel="stylesheet" href="assets/css/ebs-bootstrap-datepicker.css">
+    <link rel="stylesheet" href="assets/css/Form-Select---Full-Date---Month-Day-Year.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightpick@1.3.4/css/lightpick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.2/css/bootstrap-slider.min.css">
+    <link rel="stylesheet" href="assets/css/Multi-step-form.css">
+    <link rel="stylesheet" href="assets/css/Navbar---Logo-Middle---Phone-Logo-Middle.css">
+    <link rel="stylesheet" href="assets/css/News-Cards.css">
+    <link rel="stylesheet" href="assets/css/Powerful-Calendar.css">
+    <link rel="stylesheet" href="assets/css/Slider-Range.css">
+    <link rel="stylesheet" href="assets/css/Table-With-Search-1.css">
+    <link rel="stylesheet" href="assets/css/Table-With-Search.css">
+    <link rel="stylesheet" href="assets/css/Team-with-rotating-cards.css">
 </head>
 
 <body id="page-top">
@@ -119,65 +158,75 @@
                 </nav>
                 <div class="container-fluid">
                     <div class="d-sm-flex justify-content-between align-items-center mb-4">
-                        <h3 class="text-dark mb-0">Dashboard</h3>
+                        <h3 class="mb-0" style="color: var(--bs-info);">Dashboard</h3>
                     </div>
 
-                    <div class="d-flex d-sm-flex justify-content-center align-items-center justify-content-xl-center mb-4" style="width: 100%;">
-                        <div class="row space-rows" style="width: 100%;margin-right: 0px;margin-left: 0px;height: 30%;">
-                            <div class="col">
-                                <div class="card cards-shadown cards-hover" data-aos="flip-left" data-aos-duration="950" style="border-left-width: 5px;border-left-color: #00a5db;">
-                                    <div class="card-header" style="background: var(--bs-white);height: 150px;">
-                                        <div class="cardheader-text">
-                                            <h4 id="heading-card-1" style="color: var(--bs-info);font-size: 20px;font-weight: bold;">Amount</h4>
-                                            <p id="cardheader-subtext-1" style="color: var(--bs-info);">owing</p>
+                    <?php 
+                        if ($loanAmount != 0){
+                            echo /** @lang text */
+                            '
+                                <div class="d-flex d-sm-flex justify-content-center align-items-center justify-content-xl-center mb-4" style="width: 100%;">
+                                    <div class="d-lg-flex flex-row justify-content-lg-center align-items-lg-center" style="width: 100%;">
+                                        <div style="width: 100%;">
+                                            <p style="margin-bottom: 0px;font-weight: bold;color: var(--bs-danger);">Loan balance to pay</p>
+                                            <h1 style="color: var(--bs-info);font-weight: bold;font-size: 35px;">R'.$loanAmount.'</h1>
                                         </div>
-                                    </div>
-                                    <div class="card-body">
-                                        <p class="card-text sub-text-color" style="font-size: 20px;font-weight: bold;">0</p>
+                                        <div class="d-flex justify-content-center countdown" data-count="'.$paybackDate.'">
+                                            <div style="padding-top: 5px;padding-bottom: 5px;border-top-style: none;border-top-color: #ff0000;color: var(--bs-info);margin-bottom: 0px;margin-top: 0px;margin-right: 0px;margin-left: 0px;">
+                                                <h3 style="font-size: 40px;border-top-color: var(--bs-info);margin-bottom: 5px;">%d</h3>
+                                                <h4 style="font-size: 15px;font-weight: bold;border-top-color: var(--bs-info);">Days</h4>
+                                            </div>
+                                            <div style="padding-top: 5px;padding-bottom: 5px;border-top-style: none;border-top-color: #ff0000;color: var(--bs-info);margin-bottom: 0px;margin-top: 0px;margin-right: 0px;margin-left: 0px;">
+                                                <h3 style="font-size: 40px;border-top-color: var(--bs-info);margin-bottom: 5px;">%h</h3>
+                                                <h4 style="font-size: 15px;font-weight: bold;border-top-color: var(--bs-info);">Hours</h4>
+                                            </div>
+                                            <div style="padding-top: 5px;padding-bottom: 5px;border-top-style: none;border-top-color: #ff0000;color: var(--bs-info);margin-bottom: 0px;margin-top: 0px;margin-right: 0px;margin-left: 0px;">
+                                                <h3 style="font-size: 40px;border-top-color: var(--bs-info);margin-bottom: 5px;">%m</h3>
+                                                <h4 style="font-size: 15px;font-weight: bold;border-top-color: var(--bs-info);">Minutes</h4>
+                                            </div>
+                                            <div style="padding-top: 5px;padding-bottom: 5px;border-top-style: none;border-top-color: #ff0000;color: var(--bs-info);margin-top: 0px;margin-bottom: 0px;margin-right: 0px;margin-left: 0px;">
+                                                <h3 style="font-size: 40px;border-top-color: var(--bs-info);margin-bottom: 5px;">%s</h3>
+                                                <h4 style="font-size: 15px;font-weight: bold;border-top-color: var(--bs-info);">Seconds</h4>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col">
-                                <div class="card cards-shadown cards-hover" data-aos="slide-right" data-aos-duration="950" style="border-left-width: 5px;border-left-color: #00a5db;">
-                                    <div class="card-header" style="background: var(--bs-white);height: 150px;">
-                                        <div class="cardheader-text">
-                                            <h4 id="heading-card-2" style="color: var(--bs-info);font-weight: bold;font-size: 20px;">Rejected</h4>
-                                            <p id="cardheader-subtext-2" style="color: var(--bs-info);">applications</p>
-                                        </div>
-                                    </div>
-                                    <div class="card-body">
-                                        <p class="card-text sub-text-color" style="font-size: 20px;font-weight: bold;">0</p>
-                                    </div>
+                                <div class="d-flex d-sm-flex flex-row align-items-center justify-content-xxl-center mb-4" style="width: 100%;">
+                                    <lottie-player src="assets/js/28784-businessmen-at-the-table.json" mode="normal" style="width: 40%;" autoplay="" loop=""></lottie-player>
+                                    <div style="width: 20%;"></div>
+                                    <lottie-player src="assets/js/71804-business.json" mode="normal" style="width: 40%;" autoplay="" loop=""></lottie-player>
                                 </div>
-                            </div>
-                            <div class="col">
-                                <div class="card cards-shadown cards-hover" data-aos="flip-up" data-aos-duration="950" style="border-left-width: 5px;border-left-color: #00a5db;">
-                                    <div class="card-header cards-header-hover" style="background: var(--bs-white);height: 150px;">
-                                        <div class="cardheader-text">
-                                            <h4 id="heading-card-3" style="color: var(--bs-info);font-weight: bold;">Total</h4>
-                                            <p id="cardheader-subtext-3" style="color: var(--bs-info);">loans</p>
-                                        </div>
-                                    </div>
-                                    <div class="card-body">
-                                        <p class="card-text sub-text-color" style="font-size: 20px;font-weight: bold;">0</p>
+                            ';
+                        } else {
+                            echo /** @lang text */
+                            '
+                                <div class="d-flex d-sm-flex flex-row align-items-center justify-content-xxl-center mb-4" style="width: 100%;">
+                                    <lottie-player src="assets/js/28784-businessmen-at-the-table.json" mode="normal" style="width: 40%;" autoplay="" loop=""></lottie-player>
+                                    <div style="width: 20%;"></div>
+                                    <lottie-player src="assets/js/71804-business.json" mode="normal" style="width: 40%;" autoplay="" loop=""></lottie-player>
+                                </div>
+                                <div class="d-sm-flex justify-content-between justify-content-lg-center justify-content-xl-center justify-content-xxl-center align-items-xxl-center mb-4">
+                                    <h3 class="mb-0" style="color: var(--bs-info);">Get started by applying for a loan</h3>
+                                    <a class="btn" role="button" style="margin-left: 50px;border-radius: 20px;background: var(--bs-info);color: rgb(255,255,255);width: 20%;" href="RequestLoan">Apply Now&nbsp;<i class="fas fa-plus"></i></a>
+                                </div>
+                            ';
+                        }
+                    ?>
+
+                </div>
+            </div>
+                <div class="modal fade" id="welcomeMessage" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content" style="background: #00cc21;border-radius: 15px;">
+                                <div class="d-xl-flex justify-content-xl-center align-items-xl-center bounce animated">
+                                    <div class="d-xl-flex align-items-xl-center" style="margin-left: 10px;background: #ffffff;width: 100%;border-radius: 10px;border: 1px solid rgb(238,238,239);">
+                                        <p style="padding: 10px;margin-bottom: 0px;"><?=$toast?></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                        <div class="modal fade" id="welcomeMessage" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content" style="background: #00cc21;border-radius: 15px;">
-                                    <div class="d-xl-flex justify-content-xl-center align-items-xl-center bounce animated">
-                                        <div class="d-xl-flex align-items-xl-center" style="margin-left: 10px;background: #ffffff;width: 100%;border-radius: 10px;border: 1px solid rgb(238,238,239);">
-                                            <p style="padding: 10px;margin-bottom: 0px;"><?=$toast?></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="modal fade" id="logoutDialog" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="logoutDialog" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -197,8 +246,6 @@
                                 </div>
                             </div>
                         </div>
-                </div>
-            </div>
             <footer class="bg-white sticky-footer">
                 <div class="container my-auto">
                     <div class="text-center my-auto copyright"><span>Copyright © P2P FinTech (Pty) Ltd 2022</span></div>
@@ -206,8 +253,10 @@
             </footer>
         </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
     </div>
+    <script src="assets/js/Countdown.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/lottie-player.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.2/bootstrap-slider.min.js"></script>
     <script src="assets/js/Range-selector---slider.js"></script>

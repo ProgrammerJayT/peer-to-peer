@@ -48,25 +48,23 @@
 <body id="page-top">
     <div id="wrapper">
     <div class="modal fade" id="logoutDialog" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Logout confirmation</h5>
-                                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        Are you sure?
-                                    </div>
-                                    <div class="modal-footer">
-                                        <a href = "login">
-                                            <button type="button" id="logoutButton" class="btn btn-primary">Yes, logout</button>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Logout confirmation</h5>
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Are you sure?</div>
+                    <div class="modal-footer">
+                        <a href = "login">
+                            <button type="button" id="logoutButton" class="btn btn-primary">Yes, logout</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
         <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0" style="background: var(--bs-info);">
             <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
                     <div class="sidebar-brand-icon rotate-n-15"><i class="fa fa-money"></i></div>
@@ -86,7 +84,8 @@
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
                 <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
-                    <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
+                    <div class="container-fluid">
+                        <button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
                         <ul class="navbar-nav flex-nowrap ms-auto">
                             <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="fas fa-search"></i></a>
                                 <div class="dropdown-menu dropdown-menu-end p-3 animated--grow-in" aria-labelledby="searchDropdown">
@@ -168,9 +167,11 @@
                                         <div style="background: #18aa00;height: 50px;width: 50px;margin-left: 5px;border-radius: 100px;"></div>
                                     </div>
                                 </div>
-                                <div class="d-xl-flex flex-column align-items-xl-center" style="width: 100%;margin-left: 20px;margin-top: 50px;">
-                                    <h2 style="font-weight: bold;color: var(--bs-info);">Time left to pay back loan</h2>
-                                    <div class="d-flex justify-content-center countdown" data-count="'.$loan->payback_date.'">
+                                <div class="d-xl-flex flex-column" style="width: 100%;margin-top: 50px;">
+                                    <div style="margin-left: 20px;">
+                                        <p style="margin-bottom: 0px;font-size: 25px;">Payback period</p>
+                                    </div>
+                                    <div class="d-flex countdown" data-count="'.$loan->payback_date.'" style="margin-left: 20px;">
                                         <div style="border-top-color: var(--bs-info);">
                                             <h3 style="color: rgb(0,0,0);font-size: 40px;">%d</h3>
                                             <h4>Days</h4>
@@ -192,7 +193,7 @@
                             </div>
                             ';
 
-                        }else {
+                        } else{
                             echo /** @lang text */
                             '<div>
                             <div class="d-xl-flex flex-row align-items-xl-center" style="width: 100%;">
@@ -213,7 +214,6 @@
                         }
                     }
                 ?>
-
                     <div style="margin-right: 20px;margin-left: 20px;margin-top: 60px;">
                         <h1 style="font-weight: bold;color: var(--bs-info);">Previous loans</h1>
                         <div class="col-md-12 search-table-col" style="margin-top: 0px;">
