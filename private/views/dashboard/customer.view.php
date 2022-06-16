@@ -95,8 +95,7 @@
 
                                         <?php
 
-                                            if (count($offer) < 1){
-                                                echo '<div class="dropdown-divider"></div>';
+                                            if ($offer == ''){
                                                 echo '<a class="dropdown-item">No offers</a>';
                                             }
                                             else {
@@ -106,8 +105,9 @@
                                                             echo /** @lang text */
                                                             '
                                                                 <a class="dropdown-item d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex flex-row justify-content-center align-items-center justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center justify-content-xl-center justify-content-xxl-center" style="padding: 5px;" href="ViewOffer?id='.$offerVal->loan_id.'">
-                                                                    <div style="width: 100%;"><span class="small text-gray-500">December 12, 2019</span>
-                                                                        <p style="margin-bottom: 0px;">A new monthly report is ready to download!</p>
+                                                                    <div style="width: 100%;">
+                                                                    <span class="small text-gray-500">'.$offerVal->loan_date.'</span>
+                                                                        <p style="margin-bottom: 0px;">'.$invValue->inv_fname.' '.$invValue->inv_lname.' made a '.$offerVal->loan_interest.'% offer'.'</p>
                                                                     </div>
                                                                 </a>
                                                             ';
@@ -118,25 +118,6 @@
                                         ?>
                                     </div>
                                 </div>
-                            </li>
-                            <li class="nav-item dropdown no-arrow mx-1">
-                                <div class="nav-item dropdown no-arrow">
-                                    <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown">
-                                        <span class="badge bg-danger badge-counter">0</span><i class="fas fa-envelope fa-fw"></i></a>
-                                    <div class="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in">
-                                        <h6 class="dropdown-header">alerts center</h6><a class="dropdown-item d-flex align-items-center" href="#">
-                                            <div class="dropdown-list-image me-3"><img class="rounded-circle" src="assets/img/avatars/avatar4.jpeg">
-                                                <div class="bg-success status-indicator"></div>
-                                            </div>
-                                            <div class="fw-bold">
-                                                <div class="text-truncate"><span>Hi there! I am wondering if you can help me with a problem I've been having.</span></div>
-                                                <p class="small text-gray-500 mb-0">Emily Fowler - 58m</p>
-                                            </div>
-                                        </a>
-                                        <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-                                    </div>
-                                </div>
-                                <div class="shadow dropdown-list dropdown-menu dropdown-menu-end" aria-labelledby="alertsDropdown"></div>
                             </li>
                             <div class="d-none d-sm-block topbar-divider"></div>
                             <li class="nav-item dropdown no-arrow">
@@ -161,43 +142,46 @@
                         <h3 class="mb-0" style="color: var(--bs-info);">Dashboard</h3>
                     </div>
 
-                    <?php 
-                        if ($loanAmount != 0){
-                            echo /** @lang text */
-                            '
-                                <div class="d-flex d-sm-flex justify-content-center align-items-center justify-content-xl-center mb-4" style="width: 100%;">
-                                    <div class="d-lg-flex flex-row justify-content-lg-center align-items-lg-center" style="width: 100%;">
-                                        <div style="width: 100%;">
-                                            <p style="margin-bottom: 0px;font-weight: bold;color: var(--bs-danger);">Loan balance to pay</p>
-                                            <h1 style="color: var(--bs-info);font-weight: bold;font-size: 35px;">R'.$loanAmount.'</h1>
-                                        </div>
-                                        <div class="d-flex justify-content-center countdown" data-count="'.$paybackDate.'">
-                                            <div style="padding-top: 5px;padding-bottom: 5px;border-top-style: none;border-top-color: #ff0000;color: var(--bs-info);margin-bottom: 0px;margin-top: 0px;margin-right: 0px;margin-left: 0px;">
-                                                <h3 style="font-size: 40px;border-top-color: var(--bs-info);margin-bottom: 5px;">%d</h3>
-                                                <h4 style="font-size: 15px;font-weight: bold;border-top-color: var(--bs-info);">Days</h4>
+                    <?php
+                        if ($loan != ''){
+                            if ($loan->loan_status = 'approved'){
+                                echo /** @lang text */
+                                '
+                                    <div class="d-flex d-sm-flex justify-content-center align-items-center justify-content-xl-center mb-4" style="width: 100%;">
+                                        <div class="d-lg-flex flex-row justify-content-lg-center align-items-lg-center" style="width: 100%;">
+                                            <div style="width: 100%;">
+                                                <p style="margin-bottom: 0px;font-weight: bold;color: var(--bs-danger);">Loan balance to pay</p>
+                                                <h1 style="color: var(--bs-info);font-weight: bold;font-size: 35px;">R'.$loan->amnt_to_pay.'</h1>
                                             </div>
-                                            <div style="padding-top: 5px;padding-bottom: 5px;border-top-style: none;border-top-color: #ff0000;color: var(--bs-info);margin-bottom: 0px;margin-top: 0px;margin-right: 0px;margin-left: 0px;">
-                                                <h3 style="font-size: 40px;border-top-color: var(--bs-info);margin-bottom: 5px;">%h</h3>
-                                                <h4 style="font-size: 15px;font-weight: bold;border-top-color: var(--bs-info);">Hours</h4>
-                                            </div>
-                                            <div style="padding-top: 5px;padding-bottom: 5px;border-top-style: none;border-top-color: #ff0000;color: var(--bs-info);margin-bottom: 0px;margin-top: 0px;margin-right: 0px;margin-left: 0px;">
-                                                <h3 style="font-size: 40px;border-top-color: var(--bs-info);margin-bottom: 5px;">%m</h3>
-                                                <h4 style="font-size: 15px;font-weight: bold;border-top-color: var(--bs-info);">Minutes</h4>
-                                            </div>
-                                            <div style="padding-top: 5px;padding-bottom: 5px;border-top-style: none;border-top-color: #ff0000;color: var(--bs-info);margin-top: 0px;margin-bottom: 0px;margin-right: 0px;margin-left: 0px;">
-                                                <h3 style="font-size: 40px;border-top-color: var(--bs-info);margin-bottom: 5px;">%s</h3>
-                                                <h4 style="font-size: 15px;font-weight: bold;border-top-color: var(--bs-info);">Seconds</h4>
+                                            <div class="d-flex justify-content-center countdown" data-count="'.$loan->payback_date.'">
+                                                <div style="padding-top: 5px;padding-bottom: 5px;border-top-style: none;border-top-color: #ff0000;color: var(--bs-info);margin-bottom: 0px;margin-top: 0px;margin-right: 0px;margin-left: 0px;">
+                                                    <h3 style="font-size: 40px;border-top-color: var(--bs-info);margin-bottom: 5px;">%d</h3>
+                                                    <h4 style="font-size: 15px;font-weight: bold;border-top-color: var(--bs-info);">Days</h4>
+                                                </div>
+                                                <div style="padding-top: 5px;padding-bottom: 5px;border-top-style: none;border-top-color: #ff0000;color: var(--bs-info);margin-bottom: 0px;margin-top: 0px;margin-right: 0px;margin-left: 0px;">
+                                                    <h3 style="font-size: 40px;border-top-color: var(--bs-info);margin-bottom: 5px;">%h</h3>
+                                                    <h4 style="font-size: 15px;font-weight: bold;border-top-color: var(--bs-info);">Hours</h4>
+                                                </div>
+                                                <div style="padding-top: 5px;padding-bottom: 5px;border-top-style: none;border-top-color: #ff0000;color: var(--bs-info);margin-bottom: 0px;margin-top: 0px;margin-right: 0px;margin-left: 0px;">
+                                                    <h3 style="font-size: 40px;border-top-color: var(--bs-info);margin-bottom: 5px;">%m</h3>
+                                                    <h4 style="font-size: 15px;font-weight: bold;border-top-color: var(--bs-info);">Minutes</h4>
+                                                </div>
+                                                <div style="padding-top: 5px;padding-bottom: 5px;border-top-style: none;border-top-color: #ff0000;color: var(--bs-info);margin-top: 0px;margin-bottom: 0px;margin-right: 0px;margin-left: 0px;">
+                                                    <h3 style="font-size: 40px;border-top-color: var(--bs-info);margin-bottom: 5px;">%s</h3>
+                                                    <h4 style="font-size: 15px;font-weight: bold;border-top-color: var(--bs-info);">Seconds</h4>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="d-flex d-sm-flex flex-row align-items-center justify-content-xxl-center mb-4" style="width: 100%;">
-                                    <lottie-player src="assets/js/28784-businessmen-at-the-table.json" mode="normal" style="width: 40%;" autoplay="" loop=""></lottie-player>
-                                    <div style="width: 20%;"></div>
-                                    <lottie-player src="assets/js/71804-business.json" mode="normal" style="width: 40%;" autoplay="" loop=""></lottie-player>
-                                </div>
-                            ';
-                        } else {
+                                    <div class="d-flex d-sm-flex flex-row align-items-center justify-content-xxl-center mb-4" style="width: 100%;">
+                                        <lottie-player src="assets/js/28784-businessmen-at-the-table.json" mode="normal" style="width: 40%;" autoplay="" loop=""></lottie-player>
+                                        <div style="width: 20%;"></div>
+                                        <lottie-player src="assets/js/71804-business.json" mode="normal" style="width: 40%;" autoplay="" loop=""></lottie-player>
+                                    </div>
+                                ';
+                            }
+                        }
+                        else {
                             echo /** @lang text */
                             '
                                 <div class="d-flex d-sm-flex flex-row align-items-center justify-content-xxl-center mb-4" style="width: 100%;">

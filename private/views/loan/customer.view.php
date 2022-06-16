@@ -142,75 +142,81 @@
                 <div style="margin-top: 50px;">
 
                 <?php
-                    if ($request == ''){
+                    if ($request == '' && $loan == ''){
                         echo /** @lang text */
                         '<div class="alert alert-danger" role="alert">
-                            <h4 class="alert-heading">Error</h4>
                             <p>You have not applied for any loan yet!</p>
                             <hr>
                             <p class="mb-0">Please apply for a loan by clicking the button below.</p>
+                        </div>
+                        <div class="d-sm-flex justify-content-between justify-content-lg-center justify-content-xl-center justify-content-xxl-center align-items-xxl-center mb-4">
+                            <h3 class="mb-0" style="color: var(--bs-info);">Apply for loan</h3>
+                            <a class="btn" role="button" style="margin-left: 50px;border-radius: 20px;background: var(--bs-info);color: rgb(255,255,255);width: 20%;" href="RequestLoan">Apply Now&nbsp;<i class="fas fa-plus"></i></a>
                         </div>';
                     } else {
-                        if ($request->is_approved == 1){
+                        if ($request != '' && $request->is_approved == false){
                             echo /** @lang text */
                             '
-                            <div>
-                                <div class="d-xl-flex flex-row align-items-xl-center" style="width: 100%;">
-                                    <div class="d-xl-flex justify-content-xl-center align-items-xl-center" style="width: 50%;margin-left: 20px;background: var(--bs-info);border-radius: 25px;height: 100px;border-bottom: 5px solid rgb(0,152,15) ;">
-                                        <h4 class="bounce animated" style="color: rgb(255,255,255);">Loan amount:&nbsp;</h4>
-                                        <h1 class="bounce animated" style="color: rgb(255,255,255);">R3500</h1>
+                                <div>
+                                    <div class="d-xl-flex flex-row align-items-xl-center" style="width: 100%;">
+                                        <div class="d-xl-flex justify-content-xl-center align-items-xl-center" style="width: 50%;margin-left: 20px;background: var(--bs-info);border-radius: 25px;border-bottom: 5px solid rgb(255,0,0);height: 100px;">
+                                            <h4 class="bounce animated" style="color: rgb(255,255,255);">Requested amount:&nbsp;</h4>
+                                            <h1 class="bounce animated" style="color: rgb(255,255,255);">R'.$request->req_amnt.'</h1>
+                                        </div>
+                                        <div class="d-xl-flex flex-row justify-content-xl-center align-items-xl-center" style="width: 50%;margin-left: 20px;height: 100px;">
+                                            <p class="d-xl-flex justify-content-xl-center align-items-xl-center" style="margin-bottom: 0px;font-weight: bold;color: var(--bs-info);">Pending approval</p>
+                                            <div style="background: #ff0000;height: 50px;width: 50px;margin-left: 5px;border-radius: 100px;"></div>
+                                            <p class="d-xl-flex justify-content-xl-center align-items-xl-center" style="margin-bottom: 0px;margin-left: 10px;font-weight: bold;color: var(--bs-info);">Approved</p>
+                                            <div style="background: #18aa00;height: 50px;width: 50px;margin-left: 5px;border-radius: 100px;"></div>
+                                        </div>
                                     </div>
-                                    <div class="d-xl-flex flex-row justify-content-xl-center align-items-xl-center" style="width: 50%;margin-left: 20px;height: 100px;">
-                                        <p class="d-xl-flex justify-content-xl-center align-items-xl-center" style="margin-bottom: 0px;font-weight: bold;color: var(--bs-info);">Pending approval</p>
-                                        <div style="background: #ff0000;height: 50px;width: 50px;margin-left: 5px;border-radius: 100px;"></div>
-                                        <p class="d-xl-flex justify-content-xl-center align-items-xl-center" style="margin-bottom: 0px;margin-left: 10px;font-weight: bold;color: var(--bs-info);">Approved</p>
-                                        <div style="background: #18aa00;height: 50px;width: 50px;margin-left: 5px;border-radius: 100px;"></div>
-                                    </div>
+                                    <div class="d-xl-flex flex-row align-items-xl-center" style="width: 100%;margin-left: 20px;margin-top: 10px;"><button class="btn" type="submit" style="border-radius: 20px;background: #dadada;font-size: 15px;color: rgb(255,0,0);font-weight: bold;">Cancel loan request</button></div>
                                 </div>
-                                <div class="d-xl-flex flex-column" style="width: 100%;margin-top: 50px;">
-                                    <div style="margin-left: 20px;">
-                                        <p style="margin-bottom: 0px;font-size: 25px;">Payback period</p>
-                                    </div>
-                                    <div class="d-flex countdown" data-count="'.$loan->payback_date.'" style="margin-left: 20px;">
-                                        <div style="border-top-color: var(--bs-info);">
-                                            <h3 style="color: rgb(0,0,0);font-size: 40px;">%d</h3>
-                                            <h4>Days</h4>
-                                        </div>
-                                        <div style="border-top-color: var(--bs-info);">
-                                            <h3 style="color: rgb(0,0,0);font-size: 40px;">%h</h3>
-                                            <h4>Hours</h4>
-                                        </div>
-                                        <div style="border-top-color: var(--bs-info);">
-                                            <h3 style="color: rgb(0,0,0);font-size: 40px;">%m</h3>
-                                            <h4>Minutes</h4>
-                                        </div>
-                                        <div style="border-top-color: var(--bs-info);">
-                                            <h3 style="color: rgb(0,0,0);font-size: 40px;">%s</h3>
-                                            <h4>Seconds</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                             ';
-
-                        } else{
-                            echo /** @lang text */
-                            '<div>
-                            <div class="d-xl-flex flex-row align-items-xl-center" style="width: 100%;">
-                                <div class="d-xl-flex justify-content-xl-center align-items-xl-center" style="width: 50%;margin-left: 20px;background: var(--bs-info);border-radius: 25px;border-bottom: 5px solid rgb(255,0,0);height: 100px;">
-                                    <h4 class="bounce animated" style="color: rgb(255,255,255);">Requested amount:&nbsp;</h4>
-                                    <h1 class="bounce animated" style="color: rgb(255,255,255);">R3500</h1>
+                        } else {
+                            if ($loan != '' && $loan->loan_status == 'approved'){
+                                echo /** @lang text */
+                                '
+                                <div>
+                                    <div class="d-xl-flex flex-row align-items-xl-center" style="width: 100%;">
+                                        <div class="d-xl-flex justify-content-xl-center align-items-xl-center" style="width: 50%;margin-left: 20px;background: var(--bs-info);border-radius: 25px;height: 100px;border-bottom: 5px solid rgb(0,152,15) ;">
+                                            <h4 class="bounce animated" style="color: rgb(255,255,255);">Loan amount:&nbsp;</h4>
+                                            <h1 class="bounce animated" style="color: rgb(255,255,255);">R'.$loan->amnt_to_pay.'</h1>
+                                        </div>
+                                        <div class="d-xl-flex flex-row justify-content-xl-center align-items-xl-center" style="width: 50%;margin-left: 20px;height: 100px;">
+                                            <p class="d-xl-flex justify-content-xl-center align-items-xl-center" style="margin-bottom: 0px;font-weight: bold;color: var(--bs-info);">Pending approval</p>
+                                            <div style="background: #ff0000;height: 50px;width: 50px;margin-left: 5px;border-radius: 100px;"></div>
+                                            <p class="d-xl-flex justify-content-xl-center align-items-xl-center" style="margin-bottom: 0px;margin-left: 10px;font-weight: bold;color: var(--bs-info);">Approved</p>
+                                            <div style="background: #18aa00;height: 50px;width: 50px;margin-left: 5px;border-radius: 100px;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="d-xl-flex flex-column" style="width: 100%;margin-top: 50px;">
+                                        <div style="margin-left: 20px;">
+                                            <p style="margin-bottom: 0px;font-size: 25px;">Payback period</p>
+                                        </div>
+                                        <div class="d-flex countdown" data-count="'.$loan->payback_date.'" style="margin-left: 20px;">
+                                            <div style="border-top-color: var(--bs-info);">
+                                                <h3 style="color: rgb(0,0,0);font-size: 40px;">%d</h3>
+                                                <h4>Days</h4>
+                                            </div>
+                                            <div style="border-top-color: var(--bs-info);">
+                                                <h3 style="color: rgb(0,0,0);font-size: 40px;">%h</h3>
+                                                <h4>Hours</h4>
+                                            </div>
+                                            <div style="border-top-color: var(--bs-info);">
+                                                <h3 style="color: rgb(0,0,0);font-size: 40px;">%m</h3>
+                                                <h4>Minutes</h4>
+                                            </div>
+                                            <div style="border-top-color: var(--bs-info);">
+                                                <h3 style="color: rgb(0,0,0);font-size: 40px;">%s</h3>
+                                                <h4>Seconds</h4>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="d-xl-flex flex-row justify-content-xl-center align-items-xl-center" style="width: 50%;margin-left: 20px;height: 100px;">
-                                    <p class="d-xl-flex justify-content-xl-center align-items-xl-center" style="margin-bottom: 0px;font-weight: bold;color: var(--bs-info);">Pending approval</p>
-                                    <div style="background: #ff0000;height: 50px;width: 50px;margin-left: 5px;border-radius: 100px;"></div>
-                                    <p class="d-xl-flex justify-content-xl-center align-items-xl-center" style="margin-bottom: 0px;margin-left: 10px;font-weight: bold;color: var(--bs-info);">Approved</p>
-                                    <div style="background: #18aa00;height: 50px;width: 50px;margin-left: 5px;border-radius: 100px;"></div>
-                                </div>
-                            </div>
-                            <div class="d-xl-flex flex-row align-items-xl-center" style="width: 100%;margin-left: 20px;margin-top: 10px;"><button class="btn" type="submit" style="border-radius: 20px;background: #dadada;font-size: 15px;color: rgb(255,0,0);font-weight: bold;">Cancel loan request</button></div>
-                        </div>
-                            ';
+                                ';
+    
+                            }
                         }
                     }
                 ?>

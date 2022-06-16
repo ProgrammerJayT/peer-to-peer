@@ -151,9 +151,11 @@
                         alert('Please select a future date');
                         document.getElementById("getDate").value = "";
                     } else {
-                        if (userDay - day < 0){
-                            alert('Please select a future date');
-                            document.getElementById("getDate").value = "";
+                        if (userMonth - month == 0){
+                            if (userDay - day < 0){
+                                alert('Please select a future date');
+                                document.getElementById("getDate").value = "";
+                            }
                         }
                     }
                 }
