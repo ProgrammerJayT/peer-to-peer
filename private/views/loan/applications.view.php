@@ -33,11 +33,11 @@
                 </a>
                 <hr class="sidebar-divider my-0">
                 <ul class="navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item"><a class="nav-link"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="InvestorDashboard"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="InvestorProfile"><i class="fas fa-user"></i><span>Profile</span></a></li>
                     <li class="nav-item"><a class="nav-link" href=""><i class="fa fa-wpforms"></i><span>Sponsored loans</span></a></li>
-                    <li class="nav-item"><a class="nav-link active" href="SponsorCustomer"><i class="fa fa-hand-pointer-o"></i><span>Sponsor a customer</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href=""><i class="fa fa-file-pdf-o"></i><span>Statements</span></a></li>
+                    <li class="nav-item"><a class="nav-link active"><i class="fa fa-hand-pointer-o"></i><span>Sponsor a customer</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href=""><i class="fa fa-file-pdf-o"></i><span>History</span></a></li>
                 </ul>
                 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
             </div>
@@ -45,7 +45,10 @@
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
                 <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
-                    <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
+                    <div class="container-fluid">
+                        <button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button">
+                            <i class="fas fa-bars"></i>
+                        </button>
                         <ul class="navbar-nav flex-nowrap ms-auto">
                             <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="fas fa-search"></i></a>
                                 <div class="dropdown-menu dropdown-menu-end p-3 animated--grow-in" aria-labelledby="searchDropdown">
@@ -159,7 +162,7 @@
                                 <table class="table my-0" id="dataTable">
                                         <thead>
                                             <?php
-                                                if ($available > 0){
+                                                if ($requests != ''){
                                                     echo /** @lang text */
                                                     '
                                                         <tr>
@@ -180,29 +183,31 @@
                                         </thead>
                                         <tbody>
                                         <?php
-                                            foreach ($requests as $reqKey => $reqVal){
-                                                foreach ($customer as $custKey => $custVal){
-                                                    if ($reqVal->is_approved == false
-                                                    && $custVal->cust_uid == $reqVal->cust_uid){
-                                                        echo /** @lang text */
-                                                            '
-                                                                <tr>
-                                                                <td><img class="rounded-circle me-2" width="30" height="30"
-                                                                src="assets/img/avatars/avatar1.jpeg">'.$custVal->cust_fname.' '.$custVal->cust_lname.'</td>
-                                                                <td>'.$custVal->cust_email.'</td>
-                                                                <td>'.$custVal->cust_phone.'</td>
-                                                                <td>'.$custVal->cust_address.'</td>
-                                                                <td>'.$reqVal->req_date.'</td>
-                                                                <td>R'.$reqVal->req_amnt.'</td>
-                                                                <td class="d-xl-flex justify-content-xl-center align-items-xl-center pulse animated">
-                                                                    <div><a class="btn btn-sm" href="SponsorCustomer?id='.$reqVal->req_id.'" role="button"
-                                                                    style="--bs-success: #00ff57;--bs-success-rgb: 0,255,87;--bs-body-bg: #00ff38;background: var(--bs-info);color: rgb(255,255,255);">Make Offer</a>
-                                                                    </div>
-                                                                    </td>
-                                                            </tr>
-                                                        ';
+                                            if ($requests != ''){
+                                                foreach ($requests as $reqKey => $reqVal){
+                                                    foreach ($customer as $custKey => $custVal){
+                                                        if ($reqVal->is_approved == false
+                                                        && $custVal->cust_uid == $reqVal->cust_uid){
+                                                            echo /** @lang text */
+                                                                '
+                                                                    <tr>
+                                                                    <td><img class="rounded-circle me-2" width="30" height="30"
+                                                                    src="assets/img/avatars/avatar1.jpeg">'.$custVal->cust_fname.' '.$custVal->cust_lname.'</td>
+                                                                    <td>'.$custVal->cust_email.'</td>
+                                                                    <td>'.$custVal->cust_phone.'</td>
+                                                                    <td>'.$custVal->cust_address.'</td>
+                                                                    <td>'.$reqVal->req_date.'</td>
+                                                                    <td>R'.$reqVal->req_amnt.'</td>
+                                                                    <td class="d-xl-flex justify-content-xl-center align-items-xl-center pulse animated">
+                                                                        <div><a class="btn btn-sm" href="SponsorCustomer?id='.$reqVal->req_id.'" role="button"
+                                                                        style="--bs-success: #00ff57;--bs-success-rgb: 0,255,87;--bs-body-bg: #00ff38;background: var(--bs-info);color: rgb(255,255,255);">Make Offer</a>
+                                                                        </div>
+                                                                        </td>
+                                                                </tr>
+                                                            ';
+                                                        }
+    
                                                     }
-
                                                 }
                                             }
                                         ?>
@@ -210,7 +215,7 @@
 
                                         <tfoot>
                                             <?php
-                                                if ($available > 0){
+                                                if ($requests != ''){
                                                     echo /** @lang text */
                                                     '
                                                         <tr>
@@ -229,7 +234,7 @@
                                     </table>
                             </div>
                             <?php
-                                if ($available > 0){
+                                if ($requests != ''){
                                     echo /** @lang text */
                                         '
                                         <div class="row">

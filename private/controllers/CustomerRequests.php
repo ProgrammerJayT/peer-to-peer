@@ -6,24 +6,38 @@ class CustomerRequests extends Controller {
 
         $request = new Request();
         $customer = new Customer();
+        $investor = new Investor();
+        $loan = new Loan();
 
-        $reqData = $request->findAll();
-        $custData = $customer->findAll();
+        $myInfo = $investor->where('inv_username', $_SESSION['USER']->auth_username);
+        $myInfo = $myInfo[0];
 
-        $availableApplications = 0;
-
-        foreach ($reqData as $reqKey => $reqVal){
-            if ($reqVal->is_approved == false){
-                $availableApplications = $availableApplications + 1;
+        if ($checkLoan = $loan->where('inv_uid', $myInfo->inv_uid)){
+            foreach ($checkLoan as $checkKey => $checkValue) {
+                if ($checkRequest = $request->where('req_id', $checkValue->req_id)){
+                    foreach ($checkRequest as $key => $value) {
+                        if ($checkValue->inv_uid != $myInfo->inv_uid){
+                            $reqData = $checkRequest;
+                            $custData = $customer->where('cust_uid', $value->cust_uid);
+                        } else {
+                            $reqData = '';
+                            $custData = '';
+                        }
+                    }
+                }
+            }
+        } else {
+            if ($reqData = $request->findAll()){
+                foreach ($reqData as $reqDataKey => $reqDataValue) {
+                    $custData = $customer->where('cust_uid', $reqDataValue->cust_uid);
+                }
+            } else {
+                $reqData = '';
+                $custData = '';
             }
         }
 
-        if (isset($_POST['terms'])){
-            
-        }
-
-
         $this->view('loan/applications',
-        ['requests' => $reqData, 'customer' => $custData, 'available' => $availableApplications]);
+        ['requests' => $reqData, 'customer' => $custData]);
     }
 }
