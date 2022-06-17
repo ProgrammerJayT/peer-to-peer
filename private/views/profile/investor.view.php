@@ -34,7 +34,7 @@
                     <li class="nav-item"><a class="nav-link active"><i class="fas fa-user"></i><span>Profile</span></a></li>
                     <li class="nav-item"><a class="nav-link" href=""><i class="fa fa-wpforms"></i><span>Sponsored loans</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="CustomerRequests"><i class="fa fa-hand-pointer-o"></i><span>Sponsor a customer</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href=""><i class="fa fa-file-pdf-o"></i><span>Statements</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href=""><i class="fa fa-file-pdf-o"></i><span>History</span></a></li>
                 </ul>
                 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
             </div>
@@ -42,13 +42,15 @@
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
                 <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
-                    <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
+                    <div class="container-fluid">
+                        <button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
                         <ul class="navbar-nav flex-nowrap ms-auto">
                             <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="fas fa-search"></i></a>
                                 <div class="dropdown-menu dropdown-menu-end p-3 animated--grow-in" aria-labelledby="searchDropdown">
                                     <form class="me-auto navbar-search w-100">
                                         <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
-                                            <div class="input-group-append"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
+                                            <div class="input-group-append">
+                                                <button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
                                         </div>
                                     </form>
                                 </div>
@@ -68,29 +70,12 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="nav-item dropdown no-arrow mx-1">
-                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="badge bg-danger badge-counter">0</span><i class="fas fa-envelope fa-fw"></i></a>
-                                    <div class="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in">
-                                        <h6 class="dropdown-header">alerts center</h6><a class="dropdown-item d-flex align-items-center" href="#">
-                                            <div class="dropdown-list-image me-3"><img class="rounded-circle" src="assets/img/avatars/avatar4.jpeg">
-                                                <div class="bg-success status-indicator"></div>
-                                            </div>
-                                            <div class="fw-bold">
-                                                <div class="text-truncate"><span>Hi there! I am wondering if you can help me with a problem I've been having.</span></div>
-                                                <p class="small text-gray-500 mb-0">Emily Fowler - 58m</p>
-                                            </div>
-                                        </a>
-                                        <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-                                    </div>
-                                </div>
-                                <div class="shadow dropdown-list dropdown-menu dropdown-menu-end" aria-labelledby="alertsDropdown"></div>
-                            </li>
                             <div class="d-none d-sm-block topbar-divider"></div>
                             <li class="nav-item dropdown no-arrow">
                                 <div class="nav-item dropdown no-arrow">
                                     <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">
-                                        <span class="d-none d-lg-inline me-2 text-gray-600 small"><?=$name?></span>
-                                        <img class="border rounded-circle img-profile" src="assets/img/avatars/avatar1.jpeg"></a>
+                                        <span class="d-none d-lg-inline me-2 text-gray-600 small"><?=$name. ' '. $surname?></span>
+                                        <img class="border rounded-circle img-profile" src="<?=$image?>" style="object-fit:cover;"></a>
                                     <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in">
                                         <a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Profile</a>
                                         <div class="dropdown-divider"></div><a class="dropdown-item" href="#">
@@ -106,37 +91,36 @@
                     <div class="row mb-3">
                         <div class="col-lg-4">
                             <div class="card mb-3">
-                                <div class="card-body text-center shadow"><img class="rounded-circle mb-3 mt-4" src="assets/img/shin-min-jeong-.jpg" width="160" height="160">
+                                <div class="card-body text-center shadow">
+                                    <img id="profileImage" class="rounded-circle mb-3 mt-4" src="<?=$image?>" width="160" height="160" style="object-fit:cover;">
                                     <div class="mb-3">
                                         <div id="modal-open">
-                                            <div class="modal fade" role="dialog" tabindex="-1" id="exampleModal" aria-labelledby="exampleModalLabel">
-                                                <div class="modal-dialog" role="document">
+                                            <div class="modal fade" role="dialog" tabindex="-1" id="changeProfileImage" aria-labelledby="exampleModalLabel"> 
+                                            <form method="post" enctype="multipart/form-data"><div class="modal-dialog" role="document">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h4>Choose picture</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            <h4>Choose picture</h4>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
-                                                        <div class="modal-body"><input type="file" style="border: 1px solid rgb(235,235,238);border-top-right-radius: 10px;border-bottom-right-radius: 10px;color: var(--bs-info);" name="profile_picture" required="" accept="image/*"></div>
-                                                        <div class="modal-footer" style="border-width: 0px;"><button class="btn" type="submit" style="background: var(--bs-gray-900);color: #ffffff;">Upload</button></div>
+                                                            <div class="modal-body">
+                                                                <input type="file" style="border: 1px solid rgb(235,235,238);border-top-right-radius: 10px;border-bottom-right-radius: 10px;color: var(--bs-info);" 
+                                                                name="profile_picture" required="" accept="image/*">
+                                                            </div>
+                                                            <div class="modal-footer" style="border-width: 0px;">
+                                                                <button class="btn" id="updateProfilePicture" type="submit" style="background: var(--bs-gray-900);color: #ffffff;">Upload</button>
+                                                            </div>
                                                     </div>
                                                 </div>
-                                            </div><button class="btn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" style="color: var(--bs-body-bg);font-weight: bold;background: var(--bs-info);">Change profile image</button>
+                                            </form>
+                                            </div>
+                                            <button class="btn" type="button" data-bs-toggle="modal" data-bs-target="#changeProfileImage" style="color: var(--bs-body-bg);font-weight: bold;background: var(--bs-info);">Change profile image</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-8">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="card shadow mb-3">
-                                        <div class="card-header py-3" style="background: var(--bs-info);">
-                                            <p class="m-0 fw-bold" style="color: rgb(255,255,255);">User Settings</p>
-                                        </div>
-                                        <div class="card-body">
-                                            <form method="post">
-                                                <div class="row">
-
-                                                <?php if(count($errors) > 0) : ?>
+                                    <?php if(count($errors) > 0) : ?>
                                                 <div class="alert alert-warning alert-dismissible fade show p-1" role="alert">
                                                     <strong>Oops! </strong>
                                                     <?php foreach ($errors as $error):?>
@@ -157,23 +141,31 @@
                                                 </div>
 
                                                 <?php endif;?>
-
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card shadow mb-3">
+                                        <div class="card-header py-3" style="background: var(--bs-info);height:60px;">
+                                            <p class="m-0 fw-bold" style="color: rgb(255,255,255);">User Settings</p>
+                                        </div>
+                                        <div class="card-body">
+                                            <form method="post">
+                                                <div class="row">
                                                     <div class="col">
                                                         <div class="mb-3">
                                                             <label class="form-label"><strong>Username</strong></label>
-                                                            <input class="form-control" value="<?=$data->inv_username?>" type="text" id="profile_username" required="" minlength="8" maxlength="10" placeholder="Username" name="username"></div>
+                                                            <input class="form-control" value="<?=$username?>" type="text" required="" minlength="8" maxlength="10" placeholder="Username" name="username"></div>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col">
                                                         <div class="mb-3">
-                                                            <label class="form-label"><strong>First Name</strong></label>
-                                                                <input class="form-control" value="<?=$data->inv_fname?>" type="text" id="first_name" placeholder="John" name="first_name"></div>
+                                                            <label class="form-label"><strong>Name</strong></label>
+                                                                <input class="form-control" value="<?=$name?>" type="text" required="" placeholder="Name" name="name"></div>
                                                     </div>
                                                     <div class="col">
                                                         <div class="mb-3">
-                                                            <label class="form-label"><strong>Last Name</strong></label>
-                                                            <input class="form-control" value="<?=$data->inv_lname?>" type="text" id="last_name" placeholder="Doe" name="last_name"></div>
+                                                            <label class="form-label"><strong>Surname</strong></label>
+                                                            <input class="form-control" value="<?=$surname?>" type="text" required="" placeholder="Surname" name="surname"></div>
                                                     </div>
                                                 </div>
                                                 <div class="mb-3"><button class="btn btn-primary btn-sm" type="submit" style="background: var(--bs-info);">Save Settings</button></div>
@@ -181,23 +173,25 @@
                                         </div>
                                     </div>
                                     <div class="card shadow">
-                                        <div class="card-header py-3" style="background: var(--bs-info);">
+                                        <div class="card-header py-3" style="background: var(--bs-info);height:60px;">
                                             <p class="m-0 fw-bold" style="color: rgb(255,255,255);">Contact Settings</p>
                                         </div>
                                         <div class="card-body">
                                             <form method="post">
                                                 <div class="mb-3"><label class="form-label" for="address">
                                                     <strong>Address</strong></label>
-                                                    <input class="form-control" type="text" id="profile_address" placeholder="<?=$data->inv_address?>" name="address"></div>
+                                                    <input class="form-control" type="text" id="profile_address" value="<?=$address?>" placeholder="Address" name="address"></div>
                                                 <div class="row">
                                                     <div class="col">
-                                                        <div class="mb-3"><label class="form-label" for="phone"><strong>Phone</strong></label><input class="form-control" type="text" id="profile_phone" name="profile_phone" inputmode="numeric" required="" minlength="10" maxlength="10" placeholder="0715807306"></div>
+                                                        <div class="mb-3"><label class="form-label"><strong>Phone</strong></label>
+                                                        <input class="form-control" type="number" name="phone" value="<?=$phone?>" required="" minlength="10" maxlength="10" placeholder="Phone"></div>
                                                     </div>
                                                     <div class="col">
-                                                        <div class="mb-3"><label class="form-label" for="email"><strong>Email</strong></label><input class="form-control" type="text" id="profile_email" name="profile_email" required="" inputmode="email" placeholder="user@address.co.za"></div>
+                                                        <div class="mb-3"><label class="form-label"><strong>Email</strong></label>
+                                                        <input class="form-control" type="email" name="email" value="<?=$email?>" required="" inputmode="email" placeholder="user@address.co.za"></div>
                                                     </div>
                                                 </div>
-                                                <div class="mb-3"><button class="btn btn-primary btn-sm" id="submit_1" type="submit" style="background: var(--bs-info);">Save&nbsp;Settings</button></div>
+                                                <div class="mb-3"><button class="btn btn-primary btn-sm" type="submit" style="background: var(--bs-info);">Save Settings</button></div>
                                             </form>
                                         </div>
                                     </div>
@@ -224,8 +218,10 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     <script>
-        document.getElementById('submit_1').onclick = function(){
-            $('#toastMessage').modal('show');
+        function updateProfileImage(){
+            document.getElementById('profileImage').innerHTML = location.reload();
+            
+            <?php echo 'Something'; ?>
         }
     </script>
 </body>

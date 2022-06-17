@@ -76,7 +76,7 @@
                     <li class="nav-item"><a class="nav-link" href="CustomerProfile"><i class="fas fa-user"></i><span>Profile</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="CustomerLoan"><i class="fa fa-wpforms"></i><span>My loan</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="RequestLoan"><i class="fa fa-hand-pointer-o"></i><span>Apply for a loan</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href=""><i class="fa fa-file-pdf-o"></i><span>Statements</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="CustomerHistory"><i class="fa fa-file-pdf-o"></i><span>History</span></a></li>
                 </ul>
                 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
             </div>
@@ -94,7 +94,6 @@
                                         <h6 class="dropdown-header" style="padding-bottom: 5px;padding-top: 5px;background: var(--bs-info);color: var(--bs-gray-100);">alerts</h6>
 
                                         <?php
-
                                             if ($offer == ''){
                                                 echo '<a class="dropdown-item">No offers</a>';
                                             }

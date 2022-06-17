@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="height: 100%;">
+<html style="width: 100%;height: 100%;">
 
 <head>
     <meta charset="utf-8">
@@ -48,10 +48,33 @@
     <link rel="stylesheet" href="assets/css/Team-with-rotating-cards.css">
 </head>
 
-<body class="d-flex d-sm-flex flex-column justify-content-center align-items-center align-items-sm-center" style="height: 100%;background: url(&quot;assets/img/v915-techi-056.jpg&quot;) right / auto no-repeat;">
-    <div class="d-flex d-xl-flex flex-column justify-content-center align-items-center align-items-md-center align-items-lg-center justify-content-xl-center align-items-xl-center" style="width: 100%;"><img src="assets/img/logo_system-removebg-preview.png" style="width: 30%;">
-        <lottie-player src="assets/js/lf30_editor_7qohzvpi.json" mode="bounce" style="width: 20%;" loop="" autoplay=""></lottie-player>
-    </div><a class="btn btn-sm" role="button" style="width: 20%;background: #000000;border-radius: 10px;font-weight: bold;color: rgb(255,255,255);margin-bottom: 100px;" href="Login">Continue</a>
+<body class="d-md-flex d-lg-flex align-items-md-center align-items-lg-center" style="width: 100%;height: 100%;">
+    <div class="container">
+        <div class="row" style="width: 100%;">
+            <div class="col-md-6 d-lg-flex d-xl-flex d-xxl-flex flex-column justify-content-lg-center align-items-lg-center justify-content-xl-center align-items-xl-center justify-content-xxl-center align-items-xxl-center">
+                <form class="d-lg-flex flex-column align-items-lg-center" style="width: 100%;">
+                    <div class="d-lg-flex d-xxl-flex flex-column align-items-lg-center align-items-xxl-center" style="width: 100%;">
+                        <p style="width: 80%;margin-bottom: 0px;font-weight: bold;font-family: Nunito, sans-serif;color: var(--bs-blue);font-size: 20px;">Username</p><input class="form-control" type="text" style="width: 80%;border-radius: 20px;background: var(--bs-gray-400);border: 0px none rgb(255,255,255);padding-right: 10px;padding-left: 20px;padding-bottom: 5px;padding-top: 5px;color: var(--bs-gray-800);font-weight: bold;" autofocus="" minlength="8" maxlength="15" required="">
+                    </div>
+                    <div class="d-lg-flex d-xxl-flex flex-column align-items-lg-center align-items-xxl-center" style="width: 100%;margin-top: 25px;">
+                        <p style="width: 80%;margin-bottom: 0px;font-weight: bold;font-family: Nunito, sans-serif;color: var(--bs-blue);font-size: 20px;">Password</p><input class="form-control" type="password" style="width: 80%;border-radius: 20px;border-style: none;border-color: rgb(255,255,255);background: var(--bs-gray-400);padding-right: 10px;padding-left: 20px;padding-bottom: 5px;padding-top: 5px;" name="password" required="" minlength="8" maxlength="15">
+                    </div>
+                    <div class="d-lg-flex d-xxl-flex flex-column align-items-lg-center align-items-xxl-center" style="width: 100%;margin-top: 25px;">
+                        <p style="width: 80%;margin-bottom: 0px;font-weight: bold;font-family: Nunito, sans-serif;color: var(--bs-blue);font-size: 20px;">User type</p><select class="form-select" style="width: 80%;border-style: none;border-radius: 20px;padding-left: 20px;padding-right: 10px;padding-bottom: 5px;padding-top: 5px;background: var(--bs-gray-400);font-weight: bold;color: var(--bs-gray-dark);" name="user" required="">
+                            <option value="administrator" selected="">--Choose user type--</option>
+                            <option value="customer">Customer</option>
+                            <option value="investor">Investor</option>
+                        </select>
+                    </div>
+                    <div class="d-lg-flex d-xxl-flex flex-column align-items-lg-end align-items-xxl-end" style="width: 80%;margin-top: 50px;"><button class="btn btn-primary" type="submit" style="border-radius: 20px;width: 30%;">Continue</button></div>
+                </form>
+            </div>
+            <div class="col-md-6 d-lg-flex d-xl-flex d-xxl-flex justify-content-lg-center justify-content-xl-center justify-content-xxl-center">
+                <h1 style="font-family: 'Alfa Slab One', serif;color: var(--bs-blue);">Login</h1>
+                <lottie-player src="assets/js/72874-user-profile-v2.json" mode="normal" loop="" autoplay="" style="width: 70%;"></lottie-player>
+            </div>
+        </div>
+    </div>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/lottie-player.min.js"></script>
     <script src="assets/js/bs-init.js"></script>

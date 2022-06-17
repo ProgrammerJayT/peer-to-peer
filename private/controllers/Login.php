@@ -14,7 +14,7 @@ class Login extends Controller
             if($row = $auth->where('auth_username', $_POST['username'])){
                 $row = $row[0];
                 //Check if user selected user type [Customer, Admin, Sponsor]
-                if ($_POST['user'] == 'undefined'){
+                if ($_POST['user'] == 'administrator'){
                     if($row->auth_type == 'admin'){
                         if (password_verify($_POST['password'], $row->auth_password)){
                             Authentication::authenticate($row, 'Admin');

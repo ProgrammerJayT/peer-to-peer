@@ -87,7 +87,7 @@
                                         <div class="card-body p-sm-5" style="height: 100%;">
                                             <h2 class="text-center mb-4" style="font-family: Nunito, sans-serif;">Interest Rate</h2>
                                             <form method="post">
-                                                <div class="d-xl-flex justify-content-xl-center mb-3"><input class="form-control" type="number" step="0.1" name="interest" min="0" max="100" placeholder="Interest rate" required="" style="width: 50%;text-align: center;border-radius: 20px;"></div>
+                                                <div class="d-xl-flex justify-content-xl-center mb-3"><input class="form-control" type="number" step="1" name="interest" min="0" max="100" placeholder="Interest rate" required="" style="width: 50%;text-align: center;border-radius: 20px;"></div>
                                                 <h2 class="text-center mb-4" style="font-family: Nunito, sans-serif;margin-top: 50px;">Repayment date</h2>
                                                 <div class="d-xl-flex justify-content-xl-center" style="margin-top: 50px;">
                                                     <div class="d-xl-flex flex-row justify-content-xl-center" style="width: 50%;">
