@@ -41,18 +41,9 @@
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
                 <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
-                    <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
+                    <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button">
+                        <i class="fas fa-bars"></i></button>
                         <ul class="navbar-nav flex-nowrap ms-auto">
-                            <li class="nav-item dropdown d-sm-none no-arrow">
-                                <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="fas fa-search"></i></a>
-                                <div class="dropdown-menu dropdown-menu-end p-3 animated--grow-in" aria-labelledby="searchDropdown">
-                                    <form class="me-auto navbar-search w-100">
-                                        <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
-                                            <div class="input-group-append"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </li>
                             <li class="nav-item dropdown no-arrow mx-1">
                                 <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">
                                     <span class="badge bg-danger badge-counter">0</span><i class="fas fa-bell fa-fw"></i></a>
@@ -68,31 +59,12 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="nav-item dropdown no-arrow mx-1">
-                                <div class="nav-item dropdown no-arrow">
-                                    <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">
-                                        <span class="badge bg-danger badge-counter">0</span><i class="fas fa-envelope fa-fw"></i></a>
-                                    <div class="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in">
-                                        <h6 class="dropdown-header">alerts center</h6><a class="dropdown-item d-flex align-items-center" href="#">
-                                            <div class="dropdown-list-image me-3"><img class="rounded-circle" src="assets/img/avatars/avatar4.jpeg">
-                                                <div class="bg-success status-indicator"></div>
-                                            </div>
-                                            <div class="fw-bold">
-                                                <div class="text-truncate"><span>Hi there! I am wondering if you can help me with a problem I've been having.</span></div>
-                                                <p class="small text-gray-500 mb-0">Emily Fowler - 58m</p>
-                                            </div>
-                                        </a>
-                                        <a class="dropdown-item text-center small text-gray-500" href="">Show All Alerts</a>
-                                    </div>
-                                </div>
-                                <div class="shadow dropdown-list dropdown-menu dropdown-menu-end" aria-labelledby="alertsDropdown"></div>
-                            </li>
                             <div class="d-none d-sm-block topbar-divider"></div>
                             <li class="nav-item dropdown no-arrow">
                                 <div class="nav-item dropdown no-arrow">
-                                    <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">
+                                    <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown">
                                         <span class="d-none d-lg-inline me-2 text-gray-600 small"><?=$name?></span>
-                                        <img class="border rounded-circle img-profile" src="assets/img/avatars/avatar1.jpeg"></a>
+                                        <img class="border rounded-circle img-profile" src="<?=$image?>"></a>
                                     <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in">
                                         <a class="dropdown-item" href="#">
                                             <i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Profile</a>
@@ -104,63 +76,51 @@
                         </ul>
                     </div>
                 </nav>
-                <div class="container-fluid">
+
+
+                <div class="container">
                     <div class="d-sm-flex justify-content-between align-items-center mb-4">
                         <h3 class="mb-0" style="color: var(--bs-info);">Dashboard</h3>
                     </div>
-                        <div class="modal fade" id="welcomeMessage" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content" style="background: #00cc21;border-radius: 15px;">
-                                    <div class="d-xl-flex justify-content-xl-center align-items-xl-center bounce animated">
-                                        <div class="d-xl-flex align-items-xl-center" style="margin-left: 10px;background: #ffffff;width: 100%;border-radius: 10px;border: 1px solid rgb(238,238,239);">
-                                            <p style="padding: 10px;margin-bottom: 0px;"><?=$toast?></p>
-                                        </div>
+                    <div class="row">
+                        <div class="col-md-4 d-xxl-flex flex-column align-items-xxl-center">
+                            <div style="width: 100%;height: 100px;background: #f2aa25;border-radius: 20px;padding-left: 10px;">
+                                <div style="width: 100%;height: 100px;background: var(--bs-info);border-radius: 20px;">
+                                    <div class="text-end" style="width: 100%;padding-top: 10px;padding-right: 20px;color: rgb(255,255,255);">
+                                        <h3 class="text-end">My Customers</h3>
+                                    </div>
+                                    <div style="width: 100%;padding-left: 20px;">
+                                        <p class="text-start" style="font-size: 30px;font-weight: bold;color: #ffa500;">0</p>
                                     </div>
                                 </div>
                             </div>
+                            <lottie-player src="assets/js/100832-connection-people.json" mode="normal" style="width: 80%;" autoplay="" loop=""></lottie-player>
                         </div>
-
-                    <div class="d-flex d-sm-flex justify-content-center align-items-center justify-content-xl-center mb-4" style="width: 100%;">
-                        <div class="row space-rows" style="width: 100%;margin-right: 0px;margin-left: 0px;height: 30%;">
-                            <div class="col">
-                                <div class="card cards-shadown cards-hover" data-aos="flip-left" data-aos-duration="950" style="border-left-width: 5px;border-left-color: var(--bs-pink);">
-                                    <div class="card-header" style="background: var(--bs-white);height: 150px;">
-                                        <div class="cardheader-text">
-                                            <h4 id="heading-card-1" style="color: var(--bs-info);font-size: 20px;font-weight: bold;">Customers</h4>
-                                            <p id="cardheader-subtext-1" style="color: var(--bs-pink);">sponsored</p>
-                                        </div>
+                        <div class="col-md-4 d-xxl-flex flex-column align-items-xxl-center">
+                            <div style="border-radius: 20px;padding-left: 10px;background: var(--bs-gray-900);width: 100%;">
+                                <div style="width: 100%;height: 100px;background: var(--bs-info);border-radius: 20px;">
+                                    <div class="text-end" style="width: 100%;padding-top: 10px;padding-right: 20px;color: rgb(255,255,255);">
+                                        <h3 class="text-end">Total Invested</h3>
                                     </div>
-                                    <div class="card-body">
-                                        <p class="card-text sub-text-color" style="font-size: 20px;font-weight: bold;">0</p>
+                                    <div style="width: 100%;padding-left: 20px;">
+                                        <p class="text-start" style="font-size: 30px;font-weight: bold;color: #ffa500;">0</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
-                                <div class="card cards-shadown cards-hover" data-aos="slide-right" data-aos-duration="950" style="border-left-width: 5px;border-left-color: var(--bs-pink);">
-                                    <div class="card-header" style="background: var(--bs-white);height: 150px;">
-                                        <div class="cardheader-text">
-                                            <h4 id="heading-card-2" style="color: var(--bs-info);font-weight: bold;font-size: 20px;">Profit</h4>
-                                            <p id="cardheader-subtext-2" style="color: var(--bs-pink);">due</p>
-                                        </div>
+                            <lottie-player src="assets/js/90698-online-investment.json" mode="normal" style="width: 80%;" loop="" autoplay=""></lottie-player>
+                        </div>
+                        <div class="col-md-4 d-xxl-flex flex-column align-items-xxl-center">
+                            <div style="background: var(--bs-pink);border-radius: 20px;padding-left: 10px;width: 100%;">
+                                <div style="width: 100%;height: 100px;background: var(--bs-info);border-radius: 20px;">
+                                    <div class="text-end" style="width: 100%;padding-top: 10px;padding-right: 20px;color: rgb(255,255,255);">
+                                        <h3 class="text-end">Profit</h3>
                                     </div>
-                                    <div class="card-body">
-                                        <p class="card-text sub-text-color" style="font-size: 20px;font-weight: bold;">R0</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card cards-shadown cards-hover" data-aos="flip-up" data-aos-duration="950" style="border-left-width: 5px;border-left-color: var(--bs-pink);">
-                                    <div class="card-header cards-header-hover" style="background: var(--bs-white);height: 150px;">
-                                        <div class="cardheader-text">
-                                            <h4 id="heading-card-3" style="color: var(--bs-info);font-weight: bold;">Total</h4>
-                                            <p id="cardheader-subtext-3" style="color: var(--bs-pink);">sponsorship</p>
-                                        </div>
-                                    </div>
-                                    <div class="card-body">
-                                        <p class="card-text sub-text-color" style="font-size: 20px;font-weight: bold;">R0</p>
+                                    <div style="width: 100%;padding-left: 20px;">
+                                        <p class="text-start" style="font-size: 30px;font-weight: bold;color: #ffa500;">0</p>
                                     </div>
                                 </div>
                             </div>
+                            <lottie-player src="assets/js/99581-investment.json" mode="normal" style="width: 80%;" autoplay="" loop=""></lottie-player>
                         </div>
                     </div>
                 </div>
@@ -169,6 +129,7 @@
     </div>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/lottie-player.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.2/bootstrap-slider.min.js"></script>
     <script src="assets/js/Range-selector---slider.js"></script>
