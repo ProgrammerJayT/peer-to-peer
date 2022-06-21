@@ -20,21 +20,12 @@
                 <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
                     <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
                         <ul class="navbar-nav flex-nowrap ms-auto">
-                            <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="fas fa-search"></i></a>
-                                <div class="dropdown-menu dropdown-menu-end p-3 animated--grow-in" aria-labelledby="searchDropdown">
-                                    <form class="me-auto navbar-search w-100">
-                                        <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
-                                            <div class="input-group-append"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </li>
                             <div class="d-none d-sm-block topbar-divider"></div>
                             <li class="nav-item dropdown no-arrow">
                                 <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="d-none d-lg-inline me-2 text-gray-600 small">Programmer JayT</span><img class="border rounded-circle img-profile" src="assets/img/avatars/avatar1.jpeg"></a>
                                     <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in">
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="Logout"><i class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Logout</a>
+                                        <a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Profile</a><a class="dropdown-item" href="#"><i class="fas fa-cogs fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Settings</a><a class="dropdown-item" href="#"><i class="fas fa-list fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Activity log</a>
+                                        <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Logout</a>
                                     </div>
                                 </div>
                             </li>
@@ -49,38 +40,36 @@
                                 <table class="table my-0" id="dataTable">
                                     <thead>
                                         <tr>
+                                            <th style="color: var(--bs-info);">Name</th>
                                             <th style="color: var(--bs-info);">Email</th>
+                                            <th style="color: var(--bs-info);">Phone</th>
+                                            <th style="color: var(--bs-info);">Address</th>
                                             <th style="color: var(--bs-info);">Username</th>
                                             <th class="d-xl-flex flex-column align-items-xl-center" style="color: var(--bs-info);">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-
-
-
-                                    <?php
-
-                                    foreach ($usersData as $key => $value) {
-                                        if ($value->is_approved == 0) {
-                                            
-                                            echo /** @lang text */
-                                            '
-                                            <tr class="flex-row">
-                                                <td>'.$value->auth_email.'</td>
-                                                <td>'.$value->auth_username.'</td>
-                                                <td>
-                                                    <div class="d-xl-flex flex-column align-items-xl-center">
-                                                        <a class="btn btn-sm" role="button" style="font-size: 12px;background: #00d615;border-radius: 20px;padding-right: 20px;padding-left: 20px;color: rgb(255,255,255);margin-top: 5px;width: 100px;" href="Approve?id='.$value->auth_id.'">Approve</a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            ';
-                                        }
-                                    }
-                                    
-                                    ?>
-
+                                        <tr class="flex-row">
+                                            <td>Airi Satou</td>
+                                            <td>Accountant</td>
+                                            <td>Tokyo</td>
+                                            <td>33</td>
+                                            <td>2008/11/28</td>
+                                            <td>
+                                                <div class="d-xl-flex flex-column align-items-xl-center"><button class="btn btn-sm" type="button" style="font-size: 12px;background: #00d615;border-radius: 20px;padding-right: 20px;padding-left: 20px;color: rgb(255,255,255);margin-top: 5px;width: 100px;">Approve</button><button class="btn btn-sm" type="button" style="font-size: 12px;background: #f10e00;border-radius: 20px;padding-right: 20px;padding-left: 20px;color: rgb(255,255,255);margin-top: 5px;width: 100px;">Reject</button></div>
+                                            </td>
+                                        </tr>
                                     </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td><strong>Name</strong></td>
+                                            <td><strong>Email</strong></td>
+                                            <td><strong>Phone</strong></td>
+                                            <td><strong>Address</strong></td>
+                                            <td><strong>Username</strong></td>
+                                            <td class="d-xl-flex flex-column align-items-xl-center">Action</td>
+                                        </tr>
+                                    </tfoot>
                                 </table>
                             </div>
                         </div>
@@ -97,7 +86,6 @@
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="assets/js/theme.js"></script>
-    <script type="text/javascript">
 </body>
 
 </html>
