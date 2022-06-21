@@ -19,6 +19,8 @@ class Login extends Controller
                         if (password_verify($_POST['password'], $row->auth_password)){
                             Authentication::authenticate($row, 'Admin');
                             $this->redirect('AdminDashboard');
+                        } else {
+                            $errors['login_error'] = "Incorrect credentials";
                         }
                     }
                     else {
@@ -31,15 +33,25 @@ class Login extends Controller
                             $toast = 'Welcome back';
                             Authentication::authenticate($row, $toast);
 
-                            if ($row->auth_type == 'customer'){
-                                $this->redirect('CustomerDashboard');
+                            if ($row->is_approved == false){
+
+                                if ($row->uploaded_docs == false){
+                                    $this->redirect('UploadDocuments');
+                                } else {
+                                    $this->redirect('PendingAccount');
+                                }
+
+                            } else {
+                                if ($row->auth_type == 'customer'){
+                                    $this->redirect('CustomerDashboard');
+                                }
+                                else{
+                                    $this->redirect('InvestorDashboard');
+                                }
                             }
-                            else{
-                                $this->redirect('InvestorDashboard');
-                            }
-                        }
-                        else {
-                            echo "Incorrect pasword";
+
+                        } else {
+                            $errors['login_error'] = "Incorrect credentials";
                         }
                     }
                     else {

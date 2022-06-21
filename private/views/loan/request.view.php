@@ -34,9 +34,8 @@
                 <ul class="navbar-nav text-light" id="accordionSidebar">
                     <li class="nav-item"><a class="nav-link" href="CustomerDashboard"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="CustomerProfile"><i class="fas fa-user"></i><span>Profile</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="CUstomerLoan"><i class="fa fa-wpforms"></i><span>My loan</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="CustomerLoan"><i class="fa fa-wpforms"></i><span>My loan</span></a></li>
                     <li class="nav-item"><a class="nav-link active"><i class="fa fa-hand-pointer-o"></i><span>Apply for a loan</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href=""><i class="fa fa-file-pdf-o"></i><span>Statements</span></a></li>
                 </ul>
                 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
             </div>
@@ -44,13 +43,18 @@
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
                 <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
-                    <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
+                    <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button">
+                        <i class="fas fa-bars"></i></button>
                         <ul class="navbar-nav flex-nowrap ms-auto">
-                            <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="fas fa-search"></i></a>
+                            <li class="nav-item dropdown d-sm-none no-arrow">
+                                <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="fas fa-search"></i></a>
                                 <div class="dropdown-menu dropdown-menu-end p-3 animated--grow-in" aria-labelledby="searchDropdown">
                                     <form class="me-auto navbar-search w-100">
-                                        <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
-                                            <div class="input-group-append"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
+                                        <div class="input-group">
+                                            <input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button>
+                                            </div>
                                         </div>
                                     </form>
                                 </div>
@@ -124,7 +128,7 @@
                                         <div class="mb-3">
                                             <label class="form-label" for="signature">
                                                 <strong>Amount (R)</strong><br></label>
-                                                <input class="form-control" type="text" name="loan_amount" inputmode="numeric" required="" style="margin-bottom:20px">
+                                                <input class="form-control" type="number" name="loan_amount" inputmode="numeric" required="" style="margin-bottom:20px">
                                         <div class="mb-3">
                                             <button class="btn btn-primary btn-sm" id="request" type="submit" style="background: var(--bs-info);">Submit</button></div>
                                     </form>

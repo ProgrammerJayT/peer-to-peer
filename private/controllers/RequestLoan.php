@@ -12,6 +12,7 @@ class RequestLoan extends Controller
 
         $customer = new Customer();
         $request = new Request();
+        $banking = new Banking();
 
         if ($data = $customer->where('cust_email', $_SESSION['USER']->auth_email)){
             $data = $data[0];
@@ -31,22 +32,27 @@ class RequestLoan extends Controller
             }
 
             else {
-                if (isset($_POST['loan_amount'])){
-                    if (!is_numeric($_POST['loan_amount'])){
-                        $errors['amount_error'] = "Enter numeric value";
-                    }
-                    else{
-                        $request = new Request();
 
-                        $req['req_date'] = date("Y/m/d");
-                        $req['req_amnt'] = $_POST['loan_amount'];
-                        $req['cust_uid'] = $data->cust_uid;
-
-                        $request->insert($req);
-                        $_SESSION['Toast'] = 'Request successful';
-
-                        $this->redirect('CustomerDashboard');
-
+                if (!$banking->where('auth_id', $_SESSION['USER']->auth_id)){
+                    $this->redirect('AddBank');
+                } else {
+                    if (isset($_POST['loan_amount'])){
+                        if (!is_numeric($_POST['loan_amount'])){
+                            $errors['amount_error'] = "Enter numeric value";
+                        }
+                        else{
+                            $request = new Request();
+    
+                            $req['req_date'] = date("Y/m/d");
+                            $req['req_amnt'] = $_POST['loan_amount'];
+                            $req['cust_uid'] = $data->cust_uid;
+    
+                            $request->insert($req);
+                            $_SESSION['Toast'] = 'Request successful';
+    
+                            $this->redirect('CustomerDashboard');
+    
+                        }
                     }
                 }
             }

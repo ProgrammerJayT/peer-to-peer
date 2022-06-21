@@ -58,14 +58,8 @@ class Register extends Controller
 
                 $auth_obj = (object) $to_auth;
                 Authentication::authenticate($auth_obj, $toast);
-
-                if ($_POST['user'] == 'customer'){
-                    $this->redirect('CustomerDashboard');
-                }
-
-                if ($_POST['user'] == 'investor'){
-                    $this->redirect('InvestorDashboard');
-                }
+                
+                $this->redirect('UploadDocuments');
 
             }
             else{

@@ -76,7 +76,6 @@
                     <li class="nav-item"><a class="nav-link" href="CustomerProfile"><i class="fas fa-user"></i><span>Profile</span></a></li>
                     <li class="nav-item"><a class="nav-link active"><i class="fa fa-wpforms"></i><span>My loan</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="RequestLoan"><i class="fa fa-hand-pointer-o"></i><span>Apply for a loan</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href=""><i class="fa fa-file-pdf-o"></i><span>Statements</span></a></li>
                 </ul>
                 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
             </div>
@@ -142,6 +141,16 @@
                 <div style="margin-top: 50px;">
 
                 <?php
+
+                if ($hasBank == false) {
+                    echo /** @lang text */
+                    '<div class="alert alert-danger" role="alert">
+                    <h4 class="alert-heading">Warning!</h4>
+                    <p>You have not added a bank account yet. Please add one to continue.</p>
+                    <hr>
+                    <p class="mb-0">Please click <a href="AddBank" class="alert-link">here</a> to add a bank account.</p>';
+                } else {
+                    
                     if ($request == '' && $loan == ''){
                         echo /** @lang text */
                         '<div class="alert alert-danger" role="alert">
@@ -219,40 +228,9 @@
                             }
                         }
                     }
+                }
                 ?>
-                    <div style="margin-right: 20px;margin-left: 20px;margin-top: 60px;">
-                        <h1 style="font-weight: bold;color: var(--bs-info);">Previous loans</h1>
-                        <div class="col-md-12 search-table-col" style="margin-top: 0px;">
-                            <div class="form-group pull-right col-lg-4" style="margin-bottom: 10px;"><input type="text" class="search form-control" placeholder="Search by typing here.." style="border-radius: 20px;"></div><span class="counter pull-right"></span>
-                            <div class="table-responsive table table-hover table-bordered results">
-                                <table class="table table-hover table-bordered">
-                                    <thead class="bill-header cs">
-                                        <tr>
-                                            <th id="trs-hd-1" class="col-lg-1" style="background: var(--bs-info);">Request Date</th>
-                                            <th id="trs-hd-2" class="col-lg-2" style="background: var(--bs-info);">Investor Name</th>
-                                            <th id="trs-hd-3" class="col-lg-3" style="background: var(--bs-info);">Investor Phone</th>
-                                            <th id="trs-hd-4" class="col-lg-2" style="background: var(--bs-info);">Investor Email</th>
-                                            <th id="trs-hd-5" class="col-lg-2" style="background: var(--bs-info);">Approval Date</th>
-                                            <th id="trs-hd-6" class="col-lg-2" style="background: var(--bs-info);">Amount</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr class="warning no-result">
-                                            <td colspan="12"><i class="fa fa-warning"></i>&nbsp; No Result !!!</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: center;">07/06/2022</td>
-                                            <td style="text-align: center;">Maebaka Jay</td>
-                                            <td style="text-align: center;">0794194768</td>
-                                            <td style="text-align: center;">test@gmail.com</td>
-                                            <td style="text-align: center;">08/06/2022</td>
-                                            <td style="text-align: center;">6000</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+                
                 </div>
             </div>
             <footer class="bg-white sticky-footer">

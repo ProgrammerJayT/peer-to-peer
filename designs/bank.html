@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="width: 100%;">
+<html>
 
 <head>
     <meta charset="utf-8">
@@ -47,32 +47,44 @@
     <link rel="stylesheet" href="assets/css/Team-with-rotating-cards.css">
 </head>
 
-<body style="background: url(&quot;assets/img/facial_recognition.png&quot;) center / cover no-repeat;width: 100%;height: 100%;">
-    <div style="width: 100%;height: 100%;">
-        <div class="container" style="color: rgb(255,255,255);">
-            <h1>For security purposes, please upload the following</h1>
-            <p>ID Copy, 10 selfie pictures</p>
-            <div class="d-lg-flex d-xl-flex d-xxl-flex justify-content-lg-center justify-content-xl-center justify-content-xxl-center" style="width: 100%;">
-                <lottie-player src="assets/js/lf30_editor_dxpee4hb.json" mode="normal" autoplay="" loop="" style="width: 20%;"></lottie-player>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 d-lg-flex d-xl-flex flex-column align-items-lg-center align-items-xl-center">
+                <lottie-player src="assets/js/15578-banking-finance-icon-10.json" mode="normal" autoplay="" loop="" style="width: 50%;"></lottie-player>
             </div>
-            <div class="row" style="margin-bottom: 200px;">
-                <div class="col-md-6">
-                    <form data-bss-recipient="b5eaea1be6e4a9380309c1ebc28d05d0" data-bss-subject="New User Registration" data-bss-success-message="Your documents have been sent. The administrator will review your details and approved your account" data-bss-redirect-url="EndRegister">
-                        <div>
-                            <p style="font-size: 50px;font-weight: bold;color: rgb(255,214,0);">ID Copy</p><input class="form-control" type="file" style="width: 100%;border-top-right-radius: 20px;border-bottom-right-radius: 20px;border: 1px solid rgb(255,214,0) ;" name="identity" required="">
-                        </div>
-                        <div style="margin-top: 50px;">
-                            <p style="font-size: 50px;font-weight: bold;color: rgb(255,214,0);">Image</p><input class="form-control" type="file" style="width: 100%;border-top-right-radius: 20px;border-bottom-right-radius: 20px;border: 1px solid rgb(255,214,0) ;" name="selfies" multiple="" required="" accept="image/*">
-                        </div>
-                        <div style="margin-top: 50px;"><button class="btn" type="submit" style="color: rgb(0,0,0);font-weight: bold;background: #ffd600;border-radius: 20px;padding-right: 20px;padding-left: 20px;">Submit</button></div>
-                    </form>
+            <div class="col-md-6">
+                <div style="margin-top: 50px;">
+                    <h1 class="text-end" style="color: var(--bs-info);font-weight: bold;font-size: 35px;">Add banking details</h1>
                 </div>
-                <div class="col-md-6"></div>
+                <form method="post">
+                    <div style="margin-top: 20px;font-size: 20px;color: var(--bs-info);font-weight: bold;">
+                        <p>Bank name</p><select class="form-select" style="width: 100%;" name="bank" required="">
+                            <optgroup label="Choose your bank">
+                                <option value="First National Bank" selected="">FNB</option>
+                                <option value="Capitec">Capitec</option>
+                                <option value="ABSA">ABSA</option>
+                                <option value="Nedbank">Nedbank</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div style="margin-top: 20px;font-size: 20px;color: var(--bs-info);font-weight: bold;">
+                        <p>Account number</p><input class="form-control" type="number" style="width: 100%;" name="acc_num" required="">
+                    </div>
+                    <div style="margin-top: 20px;font-size: 20px;color: var(--bs-info);font-weight: bold;">
+                        <p>Account type</p><select class="form-select" style="width: 100%;" name="type" required="">
+                            <optgroup label="Choose account type">
+                                <option value="savings" selected="">Savings</option>
+                                <option value="cheque">Cheque</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div style="margin-top: 50px;font-size: 20px;color: var(--bs-info);font-weight: bold;"><button class="btn" type="submit" style="background: var(--bs-info);width: 30%;border-radius: 20px;color: rgb(255,255,255);">Submit</button></div>
+                </form>
             </div>
         </div>
     </div>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/smart-forms.min.js"></script>
     <script src="assets/js/lottie-player.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.6.0/umd/popper.min.js"></script>

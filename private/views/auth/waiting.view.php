@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="width: 100%;">
+<html style="width: 100%;background: url(&quot;assets/img/rm222batch4-mind-18.jpg&quot;) bottom / cover no-repeat;">
 
 <head>
     <meta charset="utf-8">
@@ -47,32 +47,21 @@
     <link rel="stylesheet" href="assets/css/Team-with-rotating-cards.css">
 </head>
 
-<body style="background: url(&quot;assets/img/facial_recognition.png&quot;) center / cover no-repeat;width: 100%;height: 100%;">
-    <div style="width: 100%;height: 100%;">
-        <div class="container" style="color: rgb(255,255,255);">
-            <h1>For security purposes, please upload the following</h1>
-            <p>ID Copy, 10 selfie pictures</p>
-            <div class="d-lg-flex d-xl-flex d-xxl-flex justify-content-lg-center justify-content-xl-center justify-content-xxl-center" style="width: 100%;">
-                <lottie-player src="assets/js/lf30_editor_dxpee4hb.json" mode="normal" autoplay="" loop="" style="width: 20%;"></lottie-player>
-            </div>
-            <div class="row" style="margin-bottom: 200px;">
-                <div class="col-md-6">
-                    <form data-bss-recipient="b5eaea1be6e4a9380309c1ebc28d05d0" data-bss-subject="New User Registration" data-bss-success-message="Your documents have been sent. The administrator will review your details and approved your account" data-bss-redirect-url="EndRegister">
-                        <div>
-                            <p style="font-size: 50px;font-weight: bold;color: rgb(255,214,0);">ID Copy</p><input class="form-control" type="file" style="width: 100%;border-top-right-radius: 20px;border-bottom-right-radius: 20px;border: 1px solid rgb(255,214,0) ;" name="identity" required="">
-                        </div>
-                        <div style="margin-top: 50px;">
-                            <p style="font-size: 50px;font-weight: bold;color: rgb(255,214,0);">Image</p><input class="form-control" type="file" style="width: 100%;border-top-right-radius: 20px;border-bottom-right-radius: 20px;border: 1px solid rgb(255,214,0) ;" name="selfies" multiple="" required="" accept="image/*">
-                        </div>
-                        <div style="margin-top: 50px;"><button class="btn" type="submit" style="color: rgb(0,0,0);font-weight: bold;background: #ffd600;border-radius: 20px;padding-right: 20px;padding-left: 20px;">Submit</button></div>
-                    </form>
-                </div>
-                <div class="col-md-6"></div>
+<body class="d-lg-flex flex-column justify-content-lg-center" style="background: rgba(255,255,255,0);width: 100%;">
+    <div class="d-lg-flex flex-column justify-content-lg-center align-items-lg-end" style="width: 100%;">
+        <div style="width: 60%;">
+            <h1 style="color: var(--bs-info);font-weight: bold;font-size: 40px;">Your account has not yet been approved</h1>
+            <div class="d-lg-flex justify-content-lg-center" style="padding-top: 20px;">
+                <p style="font-size: 20px;font-weight: bold;color: var(--bs-info);">Status:</p>
+                <p class="d-lg-flex flex-row" style="font-size: 20px;color: #ff0000;width: 100%;">&nbsp;Under review</p>
             </div>
         </div>
+        <div class="d-lg-flex flex-column align-items-lg-center" style="width: 60%;">
+            <lottie-player src="assets/js/40101-waiting-pigeon%20(1).json" mode="normal" autoplay="" loop="" style="width: 50%;"></lottie-player>
+        </div>
+        <div class="d-lg-flex flex-column align-items-lg-start" style="width: 60%;"><button class="btn" type="button" style="border-color: var(--bs-info);background: var(--bs-info);border-radius: 20px;padding-right: 15px;padding-left: 15px;color: rgb(255,255,255);">Back to Login</button></div>
     </div>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/smart-forms.min.js"></script>
     <script src="assets/js/lottie-player.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.6.0/umd/popper.min.js"></script>

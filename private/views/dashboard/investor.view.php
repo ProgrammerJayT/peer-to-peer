@@ -33,7 +33,6 @@
                     <li class="nav-item"><a class="nav-link" href="InvestorProfile"><i class="fas fa-user"></i><span>Profile</span></a></li>
                     <li class="nav-item"><a class="nav-link" href=""><i class="fa fa-wpforms"></i><span>Sponsored loans</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="CustomerRequests"><i class="fa fa-hand-pointer-o"></i><span>Sponsor a customer</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href=""><i class="fa fa-file-pdf-o"></i><span>Statements</span></a></li>
                 </ul>
                 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
             </div>
@@ -50,11 +49,9 @@
                                     <div class="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in">
                                         <h6 class="dropdown-header" style="padding-bottom: 5px;padding-top: 5px;">alerts</h6>
                                         <a class="dropdown-item d-flex align-items-center" href="#" style="padding-top: 5px;padding-bottom: 5px;">
-                                            <div><span class="small text-gray-500">December 12, 2019</span>
-                                                <p>A new monthly report is ready to download!</p>
+                                            <div><span class="small text-gray-500">June 12, 2022</span>
+                                                <p>Test notification</p>
                                             </div>
-                                            <div class="d-xl-flex flex-column justify-content-xl-center me-3" style="margin-left: 10px;">
-                                            <button class="btn btn-sm" type="submit" style="height: 20px;font-size: 10px;background: #008f0e;padding-top: 0;padding-bottom: 0;border-radius: 20px;color: rgb(255,255,255);margin-bottom: 5px;">Accept</button><button class="btn btn-sm" type="submit" style="height: 20px;font-size: 10px;background: #fc0000;padding-top: 0;padding-bottom: 0;border-radius: 20px;color: rgb(255,255,255);margin-bottom: 0px;">Decline</button></div>
                                         </a>
                                     </div>
                                 </div>
@@ -90,7 +87,7 @@
                                         <h3 class="text-end">My Customers</h3>
                                     </div>
                                     <div style="width: 100%;padding-left: 20px;">
-                                        <p class="text-start" style="font-size: 30px;font-weight: bold;color: #ffa500;">0</p>
+                                        <p class="text-start" style="font-size: 30px;font-weight: bold;color: #ffa500;"><?=$myCustomers?></p>
                                     </div>
                                 </div>
                             </div>
@@ -103,7 +100,7 @@
                                         <h3 class="text-end">Total Invested</h3>
                                     </div>
                                     <div style="width: 100%;padding-left: 20px;">
-                                        <p class="text-start" style="font-size: 30px;font-weight: bold;color: #ffa500;">0</p>
+                                        <p class="text-start" style="font-size: 30px;font-weight: bold;color: #ffa500;">R<?=$invested?></p>
                                     </div>
                                 </div>
                             </div>
@@ -116,7 +113,7 @@
                                         <h3 class="text-end">Profit</h3>
                                     </div>
                                     <div style="width: 100%;padding-left: 20px;">
-                                        <p class="text-start" style="font-size: 30px;font-weight: bold;color: #ffa500;">0</p>
+                                        <p class="text-start" style="font-size: 30px;font-weight: bold;color: #ffa500;">R<?=$profit?></p>
                                     </div>
                                 </div>
                             </div>

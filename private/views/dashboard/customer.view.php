@@ -76,7 +76,6 @@
                     <li class="nav-item"><a class="nav-link" href="CustomerProfile"><i class="fas fa-user"></i><span>Profile</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="CustomerLoan"><i class="fa fa-wpforms"></i><span>My loan</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="RequestLoan"><i class="fa fa-hand-pointer-o"></i><span>Apply for a loan</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="CustomerHistory"><i class="fa fa-file-pdf-o"></i><span>History</span></a></li>
                 </ul>
                 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
             </div>
@@ -123,7 +122,7 @@
                                 <div class="nav-item dropdown no-arrow">
                                     <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="">
                                         <span class="d-none d-lg-inline me-2 text-gray-600 small"><?=$name?></span>
-                                        <img class="border rounded-circle img-profile" src="assets/img/avatars/avatar1.jpeg"></a>
+                                        <img class="border rounded-circle img-profile" src="<?=$image?>"></a>
                                     <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in">
                                         <a class="dropdown-item" href="CustomerProfile">
                                             <i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Profile</a>

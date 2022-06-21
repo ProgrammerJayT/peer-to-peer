@@ -57,9 +57,12 @@
             </div>
             <div class="row" style="margin-bottom: 200px;">
                 <div class="col-md-6">
-                    <form data-bss-recipient="b5eaea1be6e4a9380309c1ebc28d05d0" data-bss-subject="New User Registration" data-bss-success-message="Your documents have been sent. The administrator will review your details and approved your account" data-bss-redirect-url="EndRegister">
+                    <form data-bss-recipient="b5eaea1be6e4a9380309c1ebc28d05d0" data-bss-subject="New User Registration" 
+                    data-bss-success-message="Your documents have been sent. The administrator will review your details and approved your account" 
+                    data-bss-redirect-url="EndRegister">
                         <div>
-                            <p style="font-size: 50px;font-weight: bold;color: rgb(255,214,0);">ID Copy</p><input class="form-control" type="file" style="width: 100%;border-top-right-radius: 20px;border-bottom-right-radius: 20px;border: 1px solid rgb(255,214,0) ;" name="identity" required="">
+                            <p style="font-size: 50px;font-weight: bold;color: rgb(255,214,0);">ID Copy</p>
+                            <input class="form-control" type="file" style="width: 100%;border-top-right-radius: 20px;border-bottom-right-radius: 20px;border: 1px solid rgb(255,214,0) ;" name="identity" required="">
                         </div>
                         <div style="margin-top: 50px;">
                             <p style="font-size: 50px;font-weight: bold;color: rgb(255,214,0);">Image</p><input class="form-control" type="file" style="width: 100%;border-top-right-radius: 20px;border-bottom-right-radius: 20px;border: 1px solid rgb(255,214,0) ;" name="selfies" multiple="" required="" accept="image/*">

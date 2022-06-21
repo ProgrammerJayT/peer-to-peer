@@ -80,7 +80,12 @@
                             <option value="investor">Investor</option>
                         </select>
                     </div>
-                    <div class="d-lg-flex d-xxl-flex flex-column align-items-lg-end align-items-xxl-end" style="width: 80%;margin-top: 50px;"><button class="btn btn-primary" type="submit" style="border-radius: 20px;width: 30%;">Continue</button></div>
+                    <div class="d-lg-flex d-xxl-flex flex-row align-items-lg-end align-items-xxl-center" style="width: 80%;margin-top: 50px;">
+                        <a href="Register" style="width: 100%;">
+                            <p style="margin-bottom: 0px;">No account yet? Go to registration</p>
+                        </a>
+                        <button class="btn btn-primary" type="submit" style="border-radius: 20px;width: 30%;">Continue</button>
+                    </div>
                 </form>
             </div>
             <div class="col-md-6 d-lg-flex d-xl-flex d-xxl-flex justify-content-lg-center justify-content-xl-center justify-content-xxl-center">

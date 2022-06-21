@@ -12,6 +12,9 @@ class CustomerRequests extends Controller {
         $myInfo = $investor->where('inv_username', $_SESSION['USER']->auth_username);
         $myInfo = $myInfo[0];
 
+        $fullName = $myInfo->inv_fname . ' ' . $myInfo->inv_lname;
+        $image = $myInfo->profile_picture;
+
         if ($checkLoan = $loan->where('inv_uid', $myInfo->inv_uid)){
             foreach ($checkLoan as $checkKey => $checkValue) {
                 if ($checkRequest = $request->where('req_id', $checkValue->req_id)){
@@ -38,6 +41,6 @@ class CustomerRequests extends Controller {
         }
 
         $this->view('loan/applications',
-        ['requests' => $reqData, 'customer' => $custData]);
+        ['requests' => $reqData, 'customer' => $custData, 'fullName' => $fullName, 'image' => $image]);
     }
 }

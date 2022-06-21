@@ -26,14 +26,21 @@ class InvestorDashboard extends Controller {
                 $toast = $_SESSION['Toast'];
             }
 
+            $profit = 0;
+            $invested = 0;
+            $myCustomers = 0;
+
             if ($checkCustomers = $loan->where('inv_uid', $myID)){
                 $myCustomers = count($checkCustomers);
-            } else {
-                $myCustomers = 0;
+
+                foreach ($checkCustomers as $key => $value) {
+                    $profit += $value->amnt_to_pay;
+                    $invested = $value->amnt_to_pay / (($value->loan_interest / 100) + 1);
+                }
             }
             
             $this->view('dashboard/investor',
-            ['data'=>$data, 'toast'=>$toast, 'name' => $fullName, 'myCustomers' => $myCustomers, 'image' => $image]);
+            ['data'=>$data, 'toast'=>$toast, 'name' => $fullName, 'myCustomers' => $myCustomers, 'image' => $image, 'profit' => $profit, 'invested' => $invested]);
         }
     }
 }

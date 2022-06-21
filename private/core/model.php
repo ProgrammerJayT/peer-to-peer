@@ -121,8 +121,8 @@ class Model extends Database {
 
         $str = trim($str, ",");
 
-        $data['auth_email'] = $id;
-        $query = "update $this->table set $str where auth_email = :auth_email";
+        $data['auth_id'] = $id;
+        $query = "update $this->table set $str where auth_id = :auth_id";
 
         return $this->query($query, $data);
     }
